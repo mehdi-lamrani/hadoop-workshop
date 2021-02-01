@@ -19,9 +19,7 @@ C'est la meilleure façon de faire des erreurs de copier-coller :)
 wget https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
 ```
 
-2 - Créer un répertoire sous HDFS OPTIONNEL.
-
-[mon_user@ip-172-31-23-69:~]# hdfs dfs -mkdir /user/mon_user
+2 - Créer un répertoire sous HDFS.
 
 :warning: Spoiler : 
 ```console
