@@ -4,6 +4,8 @@
 BUT DU TP :
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
 
+# ⚠⚠⚠ NE COPIEZ PAS LES COMMANDES SANS REFLECHIR ⚠⚠⚠
+C'est la meilleure façon de faire des erreurs de copier-coller :)
 <br/>
 
 #### Enoncé 1 : Manipulation
@@ -16,18 +18,19 @@ wget https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports
 ```
 
 2 - Créer un répertoire sous HDFS OPTIONNEL.
+
 [mon_user@ip-172-31-23-69:~]# hdfs dfs -mkdir /user/mon_user
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mkdir /user/my-user
+$ hdfs dfs -mkdir /user/mon_prenom
 ```
 
 3 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user.
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -put airports.dat /user/my-user
+$ hdfs dfs -put airports.dat /user/mon_prenom
 ```
 
 4 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs).
@@ -40,11 +43,11 @@ $ hdfs dfs -ls /user/my-user
 
 #### Enoncé 2 : Manipulation
 
-1 - Créer un répertoire hdfs “data” dans votre répertoire “user/monavatar”.
+1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mkdir /user/my-user/data
+$ hdfs dfs -mkdir /user/mon_prenom/data
 ```
 
 2 - Déplacer le fichier airports.dat depuis hdfs dans ce répertoire data.
