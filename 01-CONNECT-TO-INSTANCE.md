@@ -8,7 +8,9 @@ Une clé SSH .pem vous sera transmise sur le chat.
 - Installation de Mobaxterm :
 https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 
-La clé est fournie au format .pem : Convertissez-la en .ppk 
+- La clé est SSH vous est fournie par le formateur au format .ppk
+
+<!-- La clé est fournie au format .pem : Convertissez-la en .ppk 
 
 Pour ce faire suivre le mini-tuto ce-dessous :
 
@@ -23,10 +25,10 @@ Pour ce faire suivre le mini-tuto ce-dessous :
 
 https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format
 ```
-
+--!>
 
 Se connecter en SSH à un des workers du cluster :
 ```console
-ssh -i ./SYLAB.pem cloudbreak@35.180.197.45
+ssh -i ./M2I-EMR.pem cloudbreak@mon.add.resse.ip
 ```
 ![alt text](https://i.ibb.co/tYL7W8y/Annotation-2020-05-08-135954.png)
