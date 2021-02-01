@@ -8,13 +8,18 @@ Une clé SSH .pem vous sera transmise sur le chat.
 - Installation de Mobaxterm :  
 https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 
-- La clé SSH vous est fournie par le formateur au format .ppk
+- La clé SSH vous est fournie par le formateur au format .ppk sur teams. 
+téléchargez  la en local sur votre machine et notez bien l'endroit ou elle a été sauvegardeé
 
 Se connecter en SSH à un des workers du cluster :  
 
-```
-ssh -i ./M2I-EMR.pem hadoop@mon.add.resse.ip
-```
+ATTENTION SVP : 
+Ci dessous vous avez une capture d'écran, elle est là juste **à titre d'exemple**
+
+Vous devez rentrer 
+VOTRE USER : *hadoop*
+VOTRE CLE SSH : le chemin complet de la clée ppk
+VOTRE Adresse IP : L'adresse IP attribuée par le formateur
 
 ![alt text](https://i.ibb.co/tYL7W8y/Annotation-2020-05-08-135954.png)  
 
