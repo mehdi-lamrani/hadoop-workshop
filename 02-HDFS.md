@@ -42,7 +42,7 @@ $ hdfs dfs -put airports.dat /user/mon_prenom
 $ hdfs dfs -ls /user/my-user
 ```
 <br/>
-
+---
 #### Enoncé 2 : MANIPULATION Part II
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
@@ -69,7 +69,7 @@ $ hdfs dfs -chmod 700 /user/my-user/data/airports.dat
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
 
 <br/>
-
+---
 #### Enconcé 3 : EXPLORATION DES METADATA
 
 Explorer le mapping réel des fichiers HDFS dans EXT4.
@@ -88,3 +88,4 @@ Infos des blocs de fichiers :
 ```console
 $ hdfs fsck /user/my-user/data/airports.dat -files -blocks -locations
 ```
+---
