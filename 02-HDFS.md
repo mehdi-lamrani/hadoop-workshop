@@ -1,14 +1,15 @@
 # HADOOP - TP 1
 # LE SYSTÈME DE GESTION DE FICHIER HDFS
 
-BUT DU TP :
+
+**BUT DU TP**
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
 
 ### ⚠⚠⚠ NE COPIEZ PAS LES COMMANDES SANS REFLECHIR ⚠⚠⚠
 C'est la meilleure façon de faire des erreurs de copier-coller :)
 <br/>
 
-#### Enoncé 1 : Manipulation
+#### Enoncé 1 : MANIPULATION Part I
 
 :information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
 
@@ -41,7 +42,7 @@ $ hdfs dfs -ls /user/my-user
 ```
 <br/>
 
-#### Enoncé 2 : Manipulation
+#### Enoncé 2 : MANIPULATION Part II
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
 
@@ -54,7 +55,7 @@ $ hdfs dfs -mkdir /user/mon_prenom/data
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mv /user/my-user/airports.dat /user/my-user/data
+$ hdfs dfs -mv /user/my-user/airports.dat /user/mon_prenom/data
 ```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
@@ -68,7 +69,7 @@ $ hdfs dfs -chmod 700 /user/my-user/data/airports.dat
 
 <br/>
 
-#### Enconcé 2 : METADATA
+#### Enconcé 3 : EXPLORATION DES METADATA
 
 Explorer le mapping réel des fichiers HDFS dans EXT4.
 Localiser les données relatives au fichier chargé dans HDFS lors de la première partie.
@@ -78,10 +79,11 @@ Localiser les données relatives au fichier chargé dans HDFS lors de la premiè
 * Mapping des blocs vers les serveurs
 
 :information_source: Ressource Utile : 
-https://hortonworks.com/blog/hdfs-metadata-directories-explained/
-
+<!--https://hortonworks.com/blog/hdfs-metadata-directories-explained/--!>
+https://www.waitingforcode.com/hdfs/hdfs-on-disk-explained/read
 
 Infos des blocs de fichiers :
+
 ```console
 $ hdfs fsck /user/my-user/data/airports.dat -files -blocks -locations
 ```
