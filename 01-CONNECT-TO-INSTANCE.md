@@ -14,7 +14,7 @@ https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 
 Pour ce faire suivre le mini-tuto ce-dessous :
 
-```console
+
 - Convert PEM to PPK :
 
 1. Open PuTTYgen
@@ -24,7 +24,7 @@ Pour ce faire suivre le mini-tuto ce-dessous :
 6. PuTTY will auto-detect everything it needs, and you just need to click "Save private key" and you can save your ppk key for use with PuTTY
 
 https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format
-```
+
 --!>
 
 Se connecter en SSH à un des workers du cluster :  
