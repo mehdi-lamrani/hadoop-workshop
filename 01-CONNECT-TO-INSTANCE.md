@@ -10,10 +10,18 @@ https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 
 - La clé SSH vous est fournie par le formateur au format .ppk
 
+Se connecter en SSH à un des workers du cluster :  
+
+```
+ssh -i ./M2I-EMR.pem hadoop@mon.add.resse.ip  
+
+
+![alt text](https://i.ibb.co/tYL7W8y/Annotation-2020-05-08-135954.png)  
+
+
 <!-- La clé est fournie au format .pem : Convertissez-la en .ppk 
 
 Pour ce faire suivre le mini-tuto ce-dessous :
-
 
 - Convert PEM to PPK :
 
@@ -25,10 +33,3 @@ Pour ce faire suivre le mini-tuto ce-dessous :
 
 https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format --!>
 
-Se connecter en SSH à un des workers du cluster :  
-
-
-ssh -i ./M2I-EMR.pem hadoop@mon.add.resse.ip  
-
-
-![alt text](https://i.ibb.co/tYL7W8y/Annotation-2020-05-08-135954.png)  
