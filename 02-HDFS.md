@@ -39,7 +39,7 @@ $ hdfs dfs -put airports.dat /user/mon_prenom
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -ls /user/my-user
+$ hdfs dfs -ls /user/mon_prenom
 ```
 
 ---
@@ -56,14 +56,14 @@ $ hdfs dfs -mkdir /user/mon_prenom/data
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mv /user/my-user/airports.dat /user/mon_prenom/data
+$ hdfs dfs -mv /user/mon_prenom/airports.dat /user/mon_prenom/data
 ```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
 
 :warning: Spoiler :
 ```console
-$ hdfs dfs -chmod 700 /user/my-user/data/airports.dat
+$ hdfs dfs -chmod 700 /user/mon_prenom/data/airports.dat
 ```
 
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
@@ -86,6 +86,6 @@ https://www.waitingforcode.com/hdfs/hdfs-on-disk-explained/read
 Infos des blocs de fichiers :
   
 ```console  
-$ hdfs fsck /user/my-user/data/airports.dat -files -blocks -locations  
+$ hdfs fsck /user/mon_prenom/data/airports.dat -files -blocks -locations  
 ```  
 ---
