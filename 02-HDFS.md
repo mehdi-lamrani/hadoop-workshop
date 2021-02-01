@@ -41,7 +41,7 @@ $ hdfs dfs -put airports.dat /user/mon_prenom
 ```console
 $ hdfs dfs -ls /user/my-user
 ```
-<br/>
+
 ---
 - #### Enoncé 2 : MANIPULATION Part II
 
@@ -68,7 +68,7 @@ $ hdfs dfs -chmod 700 /user/my-user/data/airports.dat
 
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
 
-<br/>
+
 ---
 - #### Enconcé 3 : EXPLORATION DES METADATA
 
