@@ -1,5 +1,5 @@
 # HADOOP - TP 1
-LE SYSTÈME DE GESTION DE FICHIER HDFS
+# LE SYSTÈME DE GESTION DE FICHIER HDFS
 
 BUT DU TP :
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
@@ -38,7 +38,7 @@ $ hdfs dfs -ls /user/my-user
 ```
 <br/>
 
-#### Enoncé 1/2 : Manipulation
+#### Enoncé 2 : Manipulation
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/monavatar”.
 
