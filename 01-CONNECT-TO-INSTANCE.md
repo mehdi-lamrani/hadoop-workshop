@@ -1,4 +1,4 @@
-# Connexion à votre instance Centos :
+# Connexion à votre instance Linux :
 
 Vos Credentials et IP respectives vous seront envoyés sur le chat.
 Une clé SSH .pem vous sera transmise sur le chat.
