@@ -13,8 +13,8 @@ https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 Se connecter en SSH à un des workers du cluster :  
 
 ```
-ssh -i ./M2I-EMR.pem hadoop@mon.add.resse.ip  
-
+ssh -i ./M2I-EMR.pem hadoop@mon.add.resse.ip
+```
 
 ![alt text](https://i.ibb.co/tYL7W8y/Annotation-2020-05-08-135954.png)  
 
