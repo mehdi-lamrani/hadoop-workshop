@@ -5,7 +5,7 @@ Une clé SSH .pem vous sera transmise sur le chat.
 
 :warning: Si vous êtes sur Windows :
 
-- Installation de Mobaxterm :
+- Installation de Mobaxterm :  
 https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 
 - La clé est SSH vous est fournie par le formateur au format .ppk
@@ -23,13 +23,11 @@ Pour ce faire suivre le mini-tuto ce-dessous :
 5. Browse to, and Open your .pem file
 6. PuTTY will auto-detect everything it needs, and you just need to click "Save private key" and you can save your ppk key for use with PuTTY
 
-https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format
-
---!>
+https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format--!>
 
 Se connecter en SSH à un des workers du cluster :  
 
-```console
+```
 ssh -i ./M2I-EMR.pem cloudbreak@mon.add.resse.ip
 ``` 
 
