@@ -4,7 +4,7 @@
 BUT DU TP :
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
 
-# ⚠⚠⚠ NE COPIEZ PAS LES COMMANDES SANS REFLECHIR ⚠⚠⚠
+### ⚠⚠⚠ NE COPIEZ PAS LES COMMANDES SANS REFLECHIR ⚠⚠⚠
 C'est la meilleure façon de faire des erreurs de copier-coller :)
 <br/>
 
