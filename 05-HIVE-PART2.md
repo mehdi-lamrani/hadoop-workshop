@@ -77,4 +77,4 @@ https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
 
 4. Créer des vues et requêter les données.
 
-5. Visualiser des histogrammes pertinents dans Superset (Demo Live Mehdi + doc sur Slack).
+5. Visualiser des histogrammes pertinents dans Zeppelin (Démo formateur)
