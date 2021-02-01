@@ -1,4 +1,8 @@
-# Lancement du cluster :
+# CETTE PARTIE EST UNE ARCHIVE 
+*(de l'époque CLOUDERA-HORTONWORKS)*
+# A IGNORER POUR Les TP EMR
+
+# Lancement du Cluster :
  
 ## Lancement de Cloudbreak :
 
