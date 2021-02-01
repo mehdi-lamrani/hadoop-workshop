@@ -10,7 +10,7 @@ C'est la meilleure façon de faire des erreurs de copier-coller :)
 <br/>
 
 ---
-#### Enoncé 1 : MANIPULATION Part I
+- #### Enoncé 1 : MANIPULATION Part I
 
 :information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
 
@@ -43,7 +43,7 @@ $ hdfs dfs -ls /user/my-user
 ```
 <br/>
 ---
-#### Enoncé 2 : MANIPULATION Part II
+- #### Enoncé 2 : MANIPULATION Part II
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
 
@@ -70,7 +70,7 @@ $ hdfs dfs -chmod 700 /user/my-user/data/airports.dat
 
 <br/>
 ---
-#### Enconcé 3 : EXPLORATION DES METADATA
+- #### Enconcé 3 : EXPLORATION DES METADATA
 
 Explorer le mapping réel des fichiers HDFS dans EXT4.
 Localiser les données relatives au fichier chargé dans HDFS lors de la première partie.
