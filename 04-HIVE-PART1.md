@@ -8,8 +8,10 @@
 
 Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/mon_user).
 
-    * Unzip le fichier : unzip monfichier.zip
-    * Ouvrir le fichier : head monfichier.csv
+    * Unzip le fichier : unzip votrefichier.zip
+    * rm -rf __MACOSX
+    * cd driver_data
+    * Ouvrir le fichier : head votrefichier.csv
     * Noter le schéma
 
 * Lancer le shell Hive : hive
