@@ -128,6 +128,7 @@ SELECT * FROM mon_user_ma_table_xxx;
 
 <br/>
 
+<!--
 ## Etapes détaillées
 
 :no_entry_sign: **DEPRECATED (NE PAS FAIRE)**
@@ -137,6 +138,10 @@ SELECT * FROM mon_user_ma_table_xxx;
 * Importer votre fichier dans une nouvelle table dans la base précédemment créée.
 
 * Hive View 2.0 > Tables > Icone + > Import.
-* Sélectionner le délimiteur adéquat.
+* Sélectionner le délimiteur adéquat
 * Sélectionner le fichier depuis HDFS.
 * Le charger dans Hive.
+
+
+
+!-->
