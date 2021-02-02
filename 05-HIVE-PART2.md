@@ -67,14 +67,15 @@ SELECT * FROM weather WHERE month = '02';
 # Assignment
 
 #### Utiliser le dataset suivant :
+https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/ (lire le readme attentivement)
 https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
 
 1. Etudier la structure d’un fichier.
 
-2. Charger les données des années 2017- 2018 dans HIVE (tables externes).
+2. Charger les données des années 2019-2020 dans HIVE (tables externes).
 
 3. Effectuer un partitionnement adapté.
 
 4. Créer des vues et requêter les données.
 
-5. Visualiser des histogrammes pertinents dans Zeppelin (Démo formateur)
+5. Visualiser des histogrammes pertinents dans HUE/Zeppelin (Démo formateur)
