@@ -77,13 +77,15 @@ Localiser les données relatives au fichier chargé dans HDFS lors de la premiè
 * Mapping du fichier et des blocs
 * Mapping des blocs vers les serveurs
 
-:information_source: Ressource Utile :   
-<!--https://hortonworks.com/blog/hdfs-metadata-directories-explained/--!>
-https://www.waitingforcode.com/hdfs/hdfs-on-disk-explained/read
-
 Infos des blocs de fichiers :
   
 ```console  
 $ hdfs fsck /user/mon_prenom/data/airports.dat -files -blocks -locations  
 ```  
----
+--- 
+
+:information_source: Ressource Utile :   
+<!--https://hortonworks.com/blog/hdfs-metadata-directories-explained/--!>
+https://www.waitingforcode.com/hdfs/hdfs-on-disk-explained/read
+
+
