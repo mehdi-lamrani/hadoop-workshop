@@ -129,6 +129,13 @@ SELECT * FROM mon_user_ma_table_xxx;
 <br/>
 
 <!--
+## HINT
+
+CREATE TABLE driver (driverId STRING,name STRING,ssn STRING,location STRING,certified STRING,wageplan STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE tblproperties("skip.header.line.count"="1");
+
+LOAD DATA INPATH '/user/hadoop/drivers.csv' OVERWRITE INTO TABLE driver;
+
+
 ## Etapes détaillées
 
 :no_entry_sign: **DEPRECATED (NE PAS FAIRE)**
