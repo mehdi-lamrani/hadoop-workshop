@@ -35,7 +35,15 @@ $ hive
 show databases;
 ```
 
-* Créer une database mon_user_db
+* Créer une database monprenom_db
+
+```
+hive> CREATE DATABASE monprenom_db;
+```
+
+```console
+show databases;
+```
 
 * Rentrer dans cette database (Utiliser la commande use)
 ```console
