@@ -39,7 +39,7 @@ show databases;
 
 * Rentrer dans cette database (Utiliser la commande use)
 ```console
-use mon_user_db;
+use mon_prenom_db;
 ```
 
 * Changer les droits de votre database directement sur hdfs : utiliser la commande ‘chown’ pour réattribuer les droits à votre user
