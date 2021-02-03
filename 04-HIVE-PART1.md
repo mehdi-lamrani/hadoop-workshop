@@ -35,7 +35,7 @@ $ hive
 show databases;
 ```
 
-* Créer une database monprenom_db
+* Créer une database mon_prenom_db
 
 ```
 hive> CREATE DATABASE monprenom_db;
