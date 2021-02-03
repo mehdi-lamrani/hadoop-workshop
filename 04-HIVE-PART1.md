@@ -50,6 +50,7 @@ show databases;
 use mon_prenom_db;
 ```
 
+Optionnel : (non nécessaire)
 * Changer les droits de votre database directement sur hdfs : utiliser la commande ‘chown’ pour réattribuer les droits à votre user
 
 <br/>
