@@ -38,7 +38,7 @@ show databases;
 * Créer une database mon_prenom_db
 
 ```
-hive> CREATE DATABASE monprenom_db;
+hive> CREATE DATABASE mon_prenom_db;
 ```
 
 ```console
