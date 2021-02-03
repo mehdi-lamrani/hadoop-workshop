@@ -6,7 +6,7 @@
 
 * Chercher un fichier CSV Open Data de taille moyenne : [here](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip) :link:
 
-Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/mon_user).
+Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/hadoop/mon_prenom).
 
     * Unzip le fichier : unzip votrefichier.zip
     * rm -rf __MACOSX
