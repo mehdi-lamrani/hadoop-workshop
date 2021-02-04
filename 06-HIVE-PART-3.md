@@ -1,10 +1,12 @@
 
-###  COMMAND TO DOWNLOAD DATA : 
+###  COMMAND TO DOWNLOAD DATA LOCALLY : 
 
 ````
 aws s3 sync s3://transtat .
 ````
 
+Evidemment seul le capitaine de Binôme le fait :)
+(Idem pour les commandes hdfs qui suivront au sein TP Zeppelin)
 
 ###  ADD JDBC+HIVE INTERPRETER TO ZEPPELIN
 
