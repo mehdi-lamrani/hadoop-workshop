@@ -29,7 +29,7 @@ Dans Zeppelin > New Notebook > "TEST" > Roue dentée en haut à droite > lien hy
 Configuration :
 
     Property	        Default	                               Description
-    default.driver	    org.apache.hive.jdbc.HiveDriver	       Class path of JDBC driver
+    default.driver	 org.apache.hive.jdbc.HiveDriver	    Class path of JDBC driver
     default.url	        jdbc:hive2://localhost:10000	       Url for connection
     
     Dependencies
