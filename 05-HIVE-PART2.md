@@ -79,3 +79,68 @@ https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
 4. Créer des vues et requêter les données.
 
 5. Visualiser des histogrammes pertinents dans HUE/Zeppelin (Démo formateur)
+
+# HINTS 
+
+- Ajouter une colonne : 
+```
+hive> ALTER TABLE employee ADD COLUMNS (dept STRING);
+```
+- Splitter une colonne : 
+
+```
+create table test (
+key string, 
+value string )
+STORED AS ORC ;
+
+INSERT INTO test (key, value )
+VALUES (22, '1001 abc, 1002 pqr, 1003 tuv'),
+(33, '1004 def, 1005 xyz');
+
+
+
+select key, split(items, ',') as valArray
+	from test
+
+result 
+
++------+---------------------------------------+--+
+| key  |                  _c1                  |
++------+---------------------------------------+--+
+| 22   | ["1001 abc"," 1002 pqr"," 1003 tuv"]  |
+| 33   | ["1004 def"," 1005 xyz"]              |
++------+---------------------------------------+--+
+
+select key, trim(uniqueVal)
+from(
+ select key, split(items, ',') as valArray
+ from test ) a lateral view explode(a.valArray) exploded as uniqueVal ;
+
++------+-----------+--+
+| key  |    _c1    |
++------+-----------+--+
+| 22   | 1001 abc  |
+| 22   | 1002 pqr  |
+| 22   | 1003 tuv  |
+| 33   | 1004 def  |
+| 33   | 1005 xyz  |
++------+-----------+--+
+
+select key, split(trim(uniqueVal), ' ')[0], split(trim(uniqueVal), ' ')[1]
+from(
+	select key, split(items, ',') as valArray
+	from test 
+	) a lateral view explode(a.valArray) exploded as uniqueVal ;
+
++------+-------+------+--+
+| key  |  _c1  | _c2  |
++------+-------+------+--+
+| 22   | 1001  | abc  |
+| 22   | 1002  | pqr  |
+| 22   | 1003  | tuv  |
+| 33   | 1004  | def  |
+| 33   | 1005  | xyz  |
++------+-------+------+--+
+
+```
