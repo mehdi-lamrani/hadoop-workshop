@@ -20,13 +20,15 @@ sudo /usr/lib/zeppelin/bin/install-interpreter.sh -n jdbc --artifact org.apache.
 ```
 
 ###    STEP 2
+
+Dans Zeppelin > New Notebook > "TEST" > Roue dentée en haut à droite > lien hypertexte 'interpreter' > JDBC > Edit 
+
 ```
+Configuration :
 
-
-    Configuration
-    Property	        Default	                                         Description
-    default.driver	org.apache.hive.jdbc.HiveDriver	Class path of JDBC driver
-    default.url	jdbc:hive2://localhost:10000	      Url for connection
+    Property	        Default	                               Description
+    default.driver	    org.apache.hive.jdbc.HiveDriver	       Class path of JDBC driver
+    default.url	        jdbc:hive2://localhost:10000	       Url for connection
     
     Dependencies
     Artifact	
@@ -34,6 +36,9 @@ sudo /usr/lib/zeppelin/bin/install-interpreter.sh -n jdbc --artifact org.apache.
     org.apache.hadoop:hadoop-common:2.6.0	
     
 ```
+
+Puis : SAVE 
+
 ###    STEP 3
 ```
 cp /usr/lib/hive/lib/hive-jdbc.jar /usr/lib/zeppelin/
@@ -44,3 +49,10 @@ Restart Zeppelin
 ```
 sudo systemctl restart zeppelin
 ```
+###  LOAD ZEPPELIN NOTEBOOK : 
+
+- Télécharger le notebook qui se trouve dans /NOTEBOOKS/Zeppelin (dans le présent repo)
+- Dans Zeppelin : 
+     - Import Notebook > JSON > Chemin du fichier téléchargé
+     - Le Nouveau Notebook apparait dans Zeppelin, cliquez dessus
+     - You're good to go
