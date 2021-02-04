@@ -21,11 +21,17 @@ http://MY.IP.ADD.RESS:8890
 sudo /usr/lib/zeppelin/bin/install-interpreter.sh -n jdbc --artifact org.apache.zeppelin:zeppelin-jdbc:0.9.0-preview1
 ```
 
+###    STEP 2
+```
+sudo cp /usr/lib/hive/lib/hive-jdbc.jar /usr/lib/zeppelin/
+```
+
+###    STEP 3
 Restart Zeppelin
 ```
 sudo systemctl restart zeppelin
 ```
-###    STEP 2
+###    STEP 4
 
 Dans Zeppelin > New Notebook > "TEST" > Roue dentée en haut à droite > lien hypertexte 'interpreter' > JDBC > Edit 
 
@@ -45,16 +51,8 @@ Configuration :
 
 Puis : SAVE 
 
-###    STEP 3
-```
-cp /usr/lib/hive/lib/hive-jdbc.jar /usr/lib/zeppelin/
-```
-###    STEP 4
 
-Restart Zeppelin
-```
-sudo systemctl restart zeppelin
-```
+
 ###  LOAD ZEPPELIN NOTEBOOK : 
 
 - Télécharger le notebook qui se trouve dans /NOTEBOOKS/Zeppelin (dans le présent repo)
