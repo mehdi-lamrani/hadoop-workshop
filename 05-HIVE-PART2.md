@@ -86,6 +86,17 @@ https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
 ```
 hive> ALTER TABLE employee ADD COLUMNS (dept STRING);
 ```
+
+- Faire un Substring (Pour isoler le code pays dans l'ID de station)
+
+```
+syntaxe : 
+substr(<input string/column>, int start, int length)
+
+exemple
+select substr(id, 1, 2) as country
+```
+
 - Splitter une colonne : 
 
 ```
