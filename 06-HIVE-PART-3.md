@@ -21,6 +21,10 @@ http://MY.IP.ADD.RESS:8890
 sudo /usr/lib/zeppelin/bin/install-interpreter.sh -n jdbc --artifact org.apache.zeppelin:zeppelin-jdbc:0.9.0-preview1
 ```
 
+Restart Zeppelin
+```
+sudo systemctl restart zeppelin
+```
 ###    STEP 2
 
 Dans Zeppelin > New Notebook > "TEST" > Roue dentée en haut à droite > lien hypertexte 'interpreter' > JDBC > Edit 
