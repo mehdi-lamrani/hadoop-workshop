@@ -1,4 +1,18 @@
+
+###  COMMAND TO DOWNLOAD DATA : 
+
+````
+aws s3 sync s3://transtat .
+````
+
+
 ###  ADD JDBC+HIVE INTERPRETER TO ZEPPELIN
+
+###   STEP 0
+
+Goto : 
+
+http://MY.IP.ADD.RESS:8890
 
 ###   STEP 1
 ```
