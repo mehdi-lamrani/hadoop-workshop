@@ -1,10 +1,10 @@
-﻿{
+{
   "paragraphs": [
     {
       "title": "Test that the JDBC interpreter is working fine and the connection to Hive server is OK",
-      "text": "%sql\nshow databases;",
+      "text": "%jdbc\nshow databases;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T21:36:15+0000",
+      "dateUpdated": "2021-02-04T22:49:09+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -39,12 +39,12 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -66,11 +66,11 @@
       "jobName": "paragraph_1612215294831_-320138519",
       "id": "paragraph_1612215294831_-320138519",
       "dateCreated": "2021-02-01T21:34:54+0000",
-      "dateStarted": "2021-02-02T14:17:14+0000",
-      "dateFinished": "2021-02-02T14:17:14+0000",
+      "dateStarted": "2021-02-04T22:49:09+0000",
+      "dateFinished": "2021-02-04T22:49:09+0000",
       "status": "FINISHED",
       "focus": true,
-      "$$hashKey": "object:265"
+      "$$hashKey": "object:209201"
     },
     {
       "title": "Load data to HDFS",
@@ -117,7 +117,7 @@
       "dateStarted": "2021-02-02T14:18:15+0000",
       "dateFinished": "2021-02-02T14:18:18+0000",
       "status": "ERROR",
-      "$$hashKey": "object:266"
+      "$$hashKey": "object:209202"
     },
     {
       "text": "%sh\nhdfs dfs -mkdir -p /user/root/transtat/data",
@@ -153,7 +153,7 @@
       "dateStarted": "2021-02-02T14:19:39+0000",
       "dateFinished": "2021-02-02T14:19:41+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:267"
+      "$$hashKey": "object:209203"
     },
     {
       "text": "%sh\nhdfs dfs -ls /user/root/transtat",
@@ -165,12 +165,12 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "scala",
+          "language": "sh",
           "editOnDblClick": false,
           "completionKey": "TAB",
-          "completionSupport": true
+          "completionSupport": false
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/sh"
       },
       "settings": {
         "params": {},
@@ -194,12 +194,12 @@
       "dateStarted": "2021-02-02T14:20:14+0000",
       "dateFinished": "2021-02-02T14:20:17+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:268"
+      "$$hashKey": "object:209204"
     },
     {
       "text": "%sh\nhdfs dfs -put /root/transtat/data/BOTS_2019_01.csv /user/root/transtat/data",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T14:21:53+0000",
+      "dateUpdated": "2021-02-04T22:51:43+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -211,7 +211,8 @@
           "completionKey": "TAB",
           "completionSupport": false
         },
-        "editorMode": "ace/mode/sh"
+        "editorMode": "ace/mode/sh",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -230,7 +231,8 @@
       "dateStarted": "2021-02-02T14:21:53+0000",
       "dateFinished": "2021-02-02T14:21:56+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:269"
+      "$$hashKey": "object:209205",
+      "title": "Do the same for all the BOTS data files"
     },
     {
       "text": "%sh\nhdfs dfs -ls /user/root/transtat/data",
@@ -271,7 +273,7 @@
       "dateStarted": "2021-02-02T14:22:16+0000",
       "dateFinished": "2021-02-02T14:22:18+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:270"
+      "$$hashKey": "object:209206"
     },
     {
       "text": "%sh\nhdfs dfs -mkdir -p /user/root/transtat/ref",
@@ -307,7 +309,7 @@
       "dateStarted": "2021-02-02T14:29:57+0000",
       "dateFinished": "2021-02-02T14:29:59+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:271"
+      "$$hashKey": "object:209207"
     },
     {
       "text": "%sh\nhdfs dfs -put /root/transtat/ref/*.csv /user/root/transtat/ref",
@@ -343,12 +345,12 @@
       "dateStarted": "2021-02-02T14:30:36+0000",
       "dateFinished": "2021-02-02T14:30:42+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:272"
+      "$$hashKey": "object:209208"
     },
     {
       "text": "%sh\nhdfs dfs -ls /user/root/transtat/ref",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T14:30:58+0000",
+      "dateUpdated": "2021-02-04T15:43:16+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -384,7 +386,7 @@
       "dateStarted": "2021-02-02T14:30:58+0000",
       "dateFinished": "2021-02-02T14:31:00+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:273"
+      "$$hashKey": "object:209209"
     },
     {
       "text": "%python\nheader = '\"Year\",\"Quarter\",\"Month\",\"DayofMonth\",\"DayOfWeek\",\"FlightDate\",\"Reporting_Airline\",\"DOT_ID_Reporting_Airline\",\"IATA_CODE_Reporting_Airline\",\"Tail_Number\",\"Flight_Number_Reporting_Airline\",\"OriginAirportID\",\"OriginAirportSeqID\",\"OriginCityMarketID\",\"Origin\",\"OriginCityName\",\"OriginState\",\"OriginStateFips\",\"OriginStateName\",\"OriginWac\",\"DestAirportID\",\"DestAirportSeqID\",\"DestCityMarketID\",\"Dest\",\"DestCityName\",\"DestState\",\"DestStateFips\",\"DestStateName\",\"DestWac\",\"CRSDepTime\",\"DepTime\",\"DepDelay\",\"DepDelayMinutes\",\"DepDel15\",\"DepartureDelayGroups\",\"DepTimeBlk\",\"TaxiOut\",\"WheelsOff\",\"WheelsOn\",\"TaxiIn\",\"CRSArrTime\",\"ArrTime\",\"ArrDelay\",\"ArrDelayMinutes\",\"ArrDel15\",\"ArrivalDelayGroups\",\"ArrTimeBlk\",\"Cancelled\",\"CancellationCode\",\"Diverted\",\"CRSElapsedTime\",\"ActualElapsedTime\",\"AirTime\",\"Flights\",\"Distance\",\"DistanceGroup\",\"CarrierDelay\",\"WeatherDelay\",\"NASDelay\",\"SecurityDelay\",\"LateAircraftDelay\",\"FirstDepTime\",\"TotalAddGTime\",\"LongestAddGTime\",\"DivAirportLandings\",\"DivReachedDest\",\"DivActualElapsedTime\",\"DivArrDelay\",\"DivDistance\",\"Div1Airport\",\"Div1AirportID\",\"Div1AirportSeqID\",\"Div1WheelsOn\",\"Div1TotalGTime\",\"Div1LongestGTime\",\"Div1WheelsOff\",\"Div1TailNum\",\"Div2Airport\",\"Div2AirportID\",\"Div2AirportSeqID\",\"Div2WheelsOn\",\"Div2TotalGTime\",\"Div2LongestGTime\",\"Div2WheelsOff\",\"Div2TailNum\",\"Div3Airport\",\"Div3AirportID\",\"Div3AirportSeqID\",\"Div3WheelsOn\",\"Div3TotalGTime\",\"Div3LongestGTime\",\"Div3WheelsOff\",\"Div3TailNum\",\"Div4Airport\",\"Div4AirportID\",\"Div4AirportSeqID\",\"Div4WheelsOn\",\"Div4TotalGTime\",\"Div4LongestGTime\",\"Div4WheelsOff\",\"Div4TailNum\",\"Div5Airport\",\"Div5AirportID\",\"Div5AirportSeqID\",\"Div5WheelsOn\",\"Div5TotalGTime\",\"Div5LongestGTime\",\"Div5WheelsOff\",\"Div5TailNum\"'\n\nfields = header.replace('\"', '').split(',')\n\nfor field in fields:\n    print(field + \" String,\")\n\n",
@@ -420,24 +422,24 @@
       "dateStarted": "2021-02-02T14:38:17+0000",
       "dateFinished": "2021-02-02T14:38:17+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:274"
+      "$$hashKey": "object:209210"
     },
     {
-      "text": "%sql\nDROP TABLE flights",
+      "text": "%jdbc\nDROP TABLE flights",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:02:20+0000",
+      "dateUpdated": "2021-02-04T22:52:17+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -458,27 +460,27 @@
       "jobName": "paragraph_1612280465075_-65898531",
       "id": "paragraph_1612280465075_-65898531",
       "dateCreated": "2021-02-02T15:41:05+0000",
-      "dateStarted": "2021-02-02T15:41:14+0000",
-      "dateFinished": "2021-02-02T15:41:14+0000",
+      "dateStarted": "2021-02-04T22:52:17+0000",
+      "dateFinished": "2021-02-04T22:52:18+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:275"
+      "$$hashKey": "object:209211"
     },
     {
-      "text": "%sql\nCREATE EXTERNAL TABLE IF NOT EXISTS flights (Year INT,\n\tQuarter INT,\n\tMonth INT,\n\tDayofMonth INT,\n\tDayOfWeek INT,\n\tFlightDate STRING,\n\tReporting_Airline STRING,\n\tDOT_ID_Reporting_Airline STRING,\n\tIATA_CODE_Reporting_Airline STRING,\n\tTail_Number STRING,\n\tFlight_Number_Reporting_Airline STRING,\n\tOriginAirportID STRING,\n\tOriginAirportSeqID STRING,\n\tOriginCityMarketID STRING,\n\tOrigin STRING,\n\tOriginCityName STRING,\n\tOriginState STRING,\n\tOriginStateFips STRING,\n\tOriginStateName STRING,\n\tOriginWac STRING,\n\tDestAirportID STRING,\n\tDestAirportSeqID STRING,\n\tDestCityMarketID STRING,\n\tDest STRING,\n\tDestCityName STRING,\n\tDestState STRING,\n\tDestStateFips STRING,\n\tDestStateName STRING,\n\tDestWac STRING,\n\tCRSDepTime STRING,\n\tDepTime STRING,\n\tDepDelay STRING,\n\tDepDelayMinutes STRING,\n\tDepDel15 STRING,\n\tDepartureDelayGroups STRING,\n\tDepTimeBlk STRING,\n\tTaxiOut STRING,\n\tWheelsOff STRING,\n\tWheelsOn STRING,\n\tTaxiIn STRING,\n\tCRSArrTime STRING,\n\tArrTime STRING,\n\tArrDelay STRING,\n\tArrDelayMinutes STRING,\n\tArrDel15 STRING,\n\tArrivalDelayGroups STRING,\n\tArrTimeBlk STRING,\n\tCancelled STRING,\n\tCancellationCode STRING,\n\tDiverted STRING,\n\tCRSElapsedTime STRING,\n\tActualElapsedTime STRING,\n\tAirTime STRING,\n\tFlights STRING,\n\tDistance STRING,\n\tDistanceGroup STRING,\n\tCarrierDelay STRING,\n\tWeatherDelay STRING,\n\tNASDelay STRING,\n\tSecurityDelay STRING,\n\tLateAircraftDelay STRING,\n\tFirstDepTime STRING,\n\tTotalAddGTime STRING,\n\tLongestAddGTime STRING,\n\tDivAirportLandings STRING,\n\tDivReachedDest STRING,\n\tDivActualElapsedTime STRING,\n\tDivArrDelay STRING,\n\tDivDistance STRING,\n\tDiv1Airport STRING,\n\tDiv1AirportID STRING,\n\tDiv1AirportSeqID STRING,\n\tDiv1WheelsOn STRING,\n\tDiv1TotalGTime STRING,\n\tDiv1LongestGTime STRING,\n\tDiv1WheelsOff STRING,\n\tDiv1TailNum STRING,\n\tDiv2Airport STRING,\n\tDiv2AirportID STRING,\n\tDiv2AirportSeqID STRING,\n\tDiv2WheelsOn STRING,\n\tDiv2TotalGTime STRING,\n\tDiv2LongestGTime STRING,\n\tDiv2WheelsOff STRING,\n\tDiv2TailNum STRING,\n\tDiv3Airport STRING,\n\tDiv3AirportID STRING,\n\tDiv3AirportSeqID STRING,\n\tDiv3WheelsOn STRING,\n\tDiv3TotalGTime STRING,\n\tDiv3LongestGTime STRING,\n\tDiv3WheelsOff STRING,\n\tDiv3TailNum STRING,\n\tDiv4Airport STRING,\n\tDiv4AirportID STRING,\n\tDiv4AirportSeqID STRING,\n\tDiv4WheelsOn STRING,\n\tDiv4TotalGTime STRING,\n\tDiv4LongestGTime STRING,\n\tDiv4WheelsOff STRING,\n\tDiv4TailNum STRING,\n\tDiv5Airport STRING,\n\tDiv5AirportID STRING,\n\tDiv5AirportSeqID STRING,\n\tDiv5WheelsOn STRING,\n\tDiv5TotalGTime STRING,\n\tDiv5LongestGTime STRING,\n\tDiv5WheelsOff STRING,\n\tDiv5TailNum STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/flights'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
+      "text": "%jdbc\nCREATE EXTERNAL TABLE IF NOT EXISTS flights (Year INT,\n\tQuarter INT,\n\tMonth INT,\n\tDayofMonth INT,\n\tDayOfWeek INT,\n\tFlightDate STRING,\n\tReporting_Airline STRING,\n\tDOT_ID_Reporting_Airline STRING,\n\tIATA_CODE_Reporting_Airline STRING,\n\tTail_Number STRING,\n\tFlight_Number_Reporting_Airline STRING,\n\tOriginAirportID STRING,\n\tOriginAirportSeqID STRING,\n\tOriginCityMarketID STRING,\n\tOrigin STRING,\n\tOriginCityName STRING,\n\tOriginState STRING,\n\tOriginStateFips STRING,\n\tOriginStateName STRING,\n\tOriginWac STRING,\n\tDestAirportID STRING,\n\tDestAirportSeqID STRING,\n\tDestCityMarketID STRING,\n\tDest STRING,\n\tDestCityName STRING,\n\tDestState STRING,\n\tDestStateFips STRING,\n\tDestStateName STRING,\n\tDestWac STRING,\n\tCRSDepTime STRING,\n\tDepTime STRING,\n\tDepDelay STRING,\n\tDepDelayMinutes STRING,\n\tDepDel15 STRING,\n\tDepartureDelayGroups STRING,\n\tDepTimeBlk STRING,\n\tTaxiOut STRING,\n\tWheelsOff STRING,\n\tWheelsOn STRING,\n\tTaxiIn STRING,\n\tCRSArrTime STRING,\n\tArrTime STRING,\n\tArrDelay STRING,\n\tArrDelayMinutes STRING,\n\tArrDel15 STRING,\n\tArrivalDelayGroups STRING,\n\tArrTimeBlk STRING,\n\tCancelled STRING,\n\tCancellationCode STRING,\n\tDiverted STRING,\n\tCRSElapsedTime STRING,\n\tActualElapsedTime STRING,\n\tAirTime STRING,\n\tFlights STRING,\n\tDistance STRING,\n\tDistanceGroup STRING,\n\tCarrierDelay STRING,\n\tWeatherDelay STRING,\n\tNASDelay STRING,\n\tSecurityDelay STRING,\n\tLateAircraftDelay STRING,\n\tFirstDepTime STRING,\n\tTotalAddGTime STRING,\n\tLongestAddGTime STRING,\n\tDivAirportLandings STRING,\n\tDivReachedDest STRING,\n\tDivActualElapsedTime STRING,\n\tDivArrDelay STRING,\n\tDivDistance STRING,\n\tDiv1Airport STRING,\n\tDiv1AirportID STRING,\n\tDiv1AirportSeqID STRING,\n\tDiv1WheelsOn STRING,\n\tDiv1TotalGTime STRING,\n\tDiv1LongestGTime STRING,\n\tDiv1WheelsOff STRING,\n\tDiv1TailNum STRING,\n\tDiv2Airport STRING,\n\tDiv2AirportID STRING,\n\tDiv2AirportSeqID STRING,\n\tDiv2WheelsOn STRING,\n\tDiv2TotalGTime STRING,\n\tDiv2LongestGTime STRING,\n\tDiv2WheelsOff STRING,\n\tDiv2TailNum STRING,\n\tDiv3Airport STRING,\n\tDiv3AirportID STRING,\n\tDiv3AirportSeqID STRING,\n\tDiv3WheelsOn STRING,\n\tDiv3TotalGTime STRING,\n\tDiv3LongestGTime STRING,\n\tDiv3WheelsOff STRING,\n\tDiv3TailNum STRING,\n\tDiv4Airport STRING,\n\tDiv4AirportID STRING,\n\tDiv4AirportSeqID STRING,\n\tDiv4WheelsOn STRING,\n\tDiv4TotalGTime STRING,\n\tDiv4LongestGTime STRING,\n\tDiv4WheelsOff STRING,\n\tDiv4TailNum STRING,\n\tDiv5Airport STRING,\n\tDiv5AirportID STRING,\n\tDiv5AirportSeqID STRING,\n\tDiv5WheelsOn STRING,\n\tDiv5TotalGTime STRING,\n\tDiv5LongestGTime STRING,\n\tDiv5WheelsOff STRING,\n\tDiv5TailNum STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/flights'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:02:10+0000",
+      "dateUpdated": "2021-02-04T22:55:59+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -499,10 +501,10 @@
       "jobName": "paragraph_1612276258017_-904353231",
       "id": "paragraph_1612276258017_-904353231",
       "dateCreated": "2021-02-02T14:30:58+0000",
-      "dateStarted": "2021-02-02T15:41:19+0000",
-      "dateFinished": "2021-02-02T15:41:19+0000",
+      "dateStarted": "2021-02-04T22:55:59+0000",
+      "dateFinished": "2021-02-04T22:55:59+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:276"
+      "$$hashKey": "object:209212"
     },
     {
       "text": "%md\nTo allow Hive to move data from source : \n```console\n$ hdfs dfs -chmod 777 /user/root/transtat/data\n```",
@@ -543,24 +545,24 @@
       "dateStarted": "2021-02-02T18:10:39+0000",
       "dateFinished": "2021-02-02T18:10:39+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:277"
+      "$$hashKey": "object:209213"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_01.csv' OVERWRITE INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_01.csv' OVERWRITE INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:56+0000",
+      "dateUpdated": "2021-02-04T22:56:24+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -581,26 +583,26 @@
       "jobName": "paragraph_1612278624525_952827975",
       "id": "paragraph_1612278624525_952827975",
       "dateCreated": "2021-02-02T15:10:24+0000",
-      "dateStarted": "2021-02-02T18:31:44+0000",
-      "dateFinished": "2021-02-02T18:31:44+0000",
+      "dateStarted": "2021-02-04T22:56:24+0000",
+      "dateFinished": "2021-02-04T22:56:24+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:278"
+      "$$hashKey": "object:209214"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_02.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_02.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:52+0000",
+      "dateUpdated": "2021-02-04T22:58:50+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -621,26 +623,26 @@
       "jobName": "paragraph_1612290711490_883673505",
       "id": "paragraph_1612290711490_883673505",
       "dateCreated": "2021-02-02T18:31:51+0000",
-      "dateStarted": "2021-02-02T18:31:54+0000",
-      "dateFinished": "2021-02-02T18:31:54+0000",
+      "dateStarted": "2021-02-04T22:58:50+0000",
+      "dateFinished": "2021-02-04T22:58:51+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:279"
+      "$$hashKey": "object:209215"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_03.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_03.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:49+0000",
+      "dateUpdated": "2021-02-04T22:58:53+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -662,26 +664,26 @@
       "jobName": "paragraph_1612290997916_-1981852328",
       "id": "paragraph_1612290997916_-1981852328",
       "dateCreated": "2021-02-02T18:36:37+0000",
-      "dateStarted": "2021-02-02T18:37:32+0000",
-      "dateFinished": "2021-02-02T18:37:33+0000",
+      "dateStarted": "2021-02-04T22:58:53+0000",
+      "dateFinished": "2021-02-04T22:58:54+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:280"
+      "$$hashKey": "object:209216"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_04.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_04.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:48+0000",
+      "dateUpdated": "2021-02-04T22:58:56+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -703,26 +705,26 @@
       "jobName": "paragraph_1612291002436_268616806",
       "id": "paragraph_1612291002436_268616806",
       "dateCreated": "2021-02-02T18:36:42+0000",
-      "dateStarted": "2021-02-02T18:37:35+0000",
-      "dateFinished": "2021-02-02T18:37:36+0000",
+      "dateStarted": "2021-02-04T22:58:56+0000",
+      "dateFinished": "2021-02-04T22:58:56+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:281"
+      "$$hashKey": "object:209217"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_05.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_05.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:44+0000",
+      "dateUpdated": "2021-02-04T22:58:59+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -744,26 +746,26 @@
       "jobName": "paragraph_1612291002920_-1602359303",
       "id": "paragraph_1612291002920_-1602359303",
       "dateCreated": "2021-02-02T18:36:42+0000",
-      "dateStarted": "2021-02-02T18:37:38+0000",
-      "dateFinished": "2021-02-02T18:37:38+0000",
+      "dateStarted": "2021-02-04T22:58:59+0000",
+      "dateFinished": "2021-02-04T22:59:00+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:282"
+      "$$hashKey": "object:209218"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_06.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_06.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:43+0000",
+      "dateUpdated": "2021-02-04T22:59:03+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -785,26 +787,26 @@
       "jobName": "paragraph_1612291003380_-858596308",
       "id": "paragraph_1612291003380_-858596308",
       "dateCreated": "2021-02-02T18:36:43+0000",
-      "dateStarted": "2021-02-02T18:37:39+0000",
-      "dateFinished": "2021-02-02T18:37:40+0000",
+      "dateStarted": "2021-02-04T22:59:03+0000",
+      "dateFinished": "2021-02-04T22:59:03+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:283"
+      "$$hashKey": "object:209219"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_07.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_07.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:42+0000",
+      "dateUpdated": "2021-02-04T22:59:05+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -826,26 +828,26 @@
       "jobName": "paragraph_1612291003788_1818188806",
       "id": "paragraph_1612291003788_1818188806",
       "dateCreated": "2021-02-02T18:36:43+0000",
-      "dateStarted": "2021-02-02T18:37:44+0000",
-      "dateFinished": "2021-02-02T18:37:44+0000",
+      "dateStarted": "2021-02-04T22:59:05+0000",
+      "dateFinished": "2021-02-04T22:59:05+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:284"
+      "$$hashKey": "object:209220"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_08.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_08.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:40+0000",
+      "dateUpdated": "2021-02-04T22:59:07+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -867,26 +869,26 @@
       "jobName": "paragraph_1612291004151_-1224476722",
       "id": "paragraph_1612291004151_-1224476722",
       "dateCreated": "2021-02-02T18:36:44+0000",
-      "dateStarted": "2021-02-02T18:37:46+0000",
-      "dateFinished": "2021-02-02T18:37:47+0000",
+      "dateStarted": "2021-02-04T22:59:08+0000",
+      "dateFinished": "2021-02-04T22:59:08+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:285"
+      "$$hashKey": "object:209221"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_09.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_09.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:39+0000",
+      "dateUpdated": "2021-02-04T22:59:19+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -908,26 +910,26 @@
       "jobName": "paragraph_1612291004556_-838065413",
       "id": "paragraph_1612291004556_-838065413",
       "dateCreated": "2021-02-02T18:36:44+0000",
-      "dateStarted": "2021-02-02T18:37:48+0000",
-      "dateFinished": "2021-02-02T18:37:48+0000",
+      "dateStarted": "2021-02-04T22:59:19+0000",
+      "dateFinished": "2021-02-04T22:59:19+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:286"
+      "$$hashKey": "object:209222"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_10.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_10.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:38+0000",
+      "dateUpdated": "2021-02-04T22:59:21+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -949,26 +951,26 @@
       "jobName": "paragraph_1612291005012_-294603742",
       "id": "paragraph_1612291005012_-294603742",
       "dateCreated": "2021-02-02T18:36:45+0000",
-      "dateStarted": "2021-02-02T18:37:51+0000",
-      "dateFinished": "2021-02-02T18:37:51+0000",
+      "dateStarted": "2021-02-04T22:59:21+0000",
+      "dateFinished": "2021-02-04T22:59:21+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:287"
+      "$$hashKey": "object:209223"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_11.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_11.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:36+0000",
+      "dateUpdated": "2021-02-04T22:59:23+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -990,26 +992,26 @@
       "jobName": "paragraph_1612291005490_-7569972",
       "id": "paragraph_1612291005490_-7569972",
       "dateCreated": "2021-02-02T18:36:45+0000",
-      "dateStarted": "2021-02-02T18:37:54+0000",
-      "dateFinished": "2021-02-02T18:37:55+0000",
+      "dateStarted": "2021-02-04T22:59:23+0000",
+      "dateFinished": "2021-02-04T22:59:24+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:288"
+      "$$hashKey": "object:209224"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_12.csv' INTO TABLE flights;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/data/BOTS_2019_12.csv' INTO TABLE flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:34+0000",
+      "dateUpdated": "2021-02-04T22:59:26+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "editorHide": false
       },
       "settings": {
@@ -1031,15 +1033,87 @@
       "jobName": "paragraph_1612291045563_-236172027",
       "id": "paragraph_1612291045563_-236172027",
       "dateCreated": "2021-02-02T18:37:25+0000",
-      "dateStarted": "2021-02-02T18:37:57+0000",
-      "dateFinished": "2021-02-02T18:37:57+0000",
+      "dateStarted": "2021-02-04T22:59:26+0000",
+      "dateFinished": "2021-02-04T22:59:26+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:289"
+      "$$hashKey": "object:209225"
     },
     {
-      "text": "%sql\nselect count(*) from flights;",
+      "text": "%jdbc\ndescribe flights;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:32+0000",
+      "dateUpdated": "2021-02-04T22:59:55+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "col_name": "string",
+                      "data_type": "string",
+                      "comment": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1612473648163_-1950041841",
+      "id": "paragraph_1612473648163_-1950041841",
+      "dateCreated": "2021-02-04T21:20:48+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:219112",
+      "dateFinished": "2021-02-04T21:20:56+0000",
+      "dateStarted": "2021-02-04T21:20:54+0000",
+      "title": "Int types are changed by the SerDe",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "col_name\tdata_type\tcomment\nyear\tstring\tfrom deserializer\nquarter\tstring\tfrom deserializer\nmonth\tstring\tfrom deserializer\ndayofmonth\tstring\tfrom deserializer\ndayofweek\tstring\tfrom deserializer\nflightdate\tstring\tfrom deserializer\nreporting_airline\tstring\tfrom deserializer\ndot_id_reporting_airline\tstring\tfrom deserializer\niata_code_reporting_airline\tstring\tfrom deserializer\ntail_number\tstring\tfrom deserializer\nflight_number_reporting_airline\tstring\tfrom deserializer\noriginairportid\tstring\tfrom deserializer\noriginairportseqid\tstring\tfrom deserializer\norigincitymarketid\tstring\tfrom deserializer\norigin\tstring\tfrom deserializer\norigincityname\tstring\tfrom deserializer\noriginstate\tstring\tfrom deserializer\noriginstatefips\tstring\tfrom deserializer\noriginstatename\tstring\tfrom deserializer\noriginwac\tstring\tfrom deserializer\ndestairportid\tstring\tfrom deserializer\ndestairportseqid\tstring\tfrom deserializer\ndestcitymarketid\tstring\tfrom deserializer\ndest\tstring\tfrom deserializer\ndestcityname\tstring\tfrom deserializer\ndeststate\tstring\tfrom deserializer\ndeststatefips\tstring\tfrom deserializer\ndeststatename\tstring\tfrom deserializer\ndestwac\tstring\tfrom deserializer\ncrsdeptime\tstring\tfrom deserializer\ndeptime\tstring\tfrom deserializer\ndepdelay\tstring\tfrom deserializer\ndepdelayminutes\tstring\tfrom deserializer\ndepdel15\tstring\tfrom deserializer\ndeparturedelaygroups\tstring\tfrom deserializer\ndeptimeblk\tstring\tfrom deserializer\ntaxiout\tstring\tfrom deserializer\nwheelsoff\tstring\tfrom deserializer\nwheelson\tstring\tfrom deserializer\ntaxiin\tstring\tfrom deserializer\ncrsarrtime\tstring\tfrom deserializer\narrtime\tstring\tfrom deserializer\narrdelay\tstring\tfrom deserializer\narrdelayminutes\tstring\tfrom deserializer\narrdel15\tstring\tfrom deserializer\narrivaldelaygroups\tstring\tfrom deserializer\narrtimeblk\tstring\tfrom deserializer\ncancelled\tstring\tfrom deserializer\ncancellationcode\tstring\tfrom deserializer\ndiverted\tstring\tfrom deserializer\ncrselapsedtime\tstring\tfrom deserializer\nactualelapsedtime\tstring\tfrom deserializer\nairtime\tstring\tfrom deserializer\nflights\tstring\tfrom deserializer\ndistance\tstring\tfrom deserializer\ndistancegroup\tstring\tfrom deserializer\ncarrierdelay\tstring\tfrom deserializer\nweatherdelay\tstring\tfrom deserializer\nnasdelay\tstring\tfrom deserializer\nsecuritydelay\tstring\tfrom deserializer\nlateaircraftdelay\tstring\tfrom deserializer\nfirstdeptime\tstring\tfrom deserializer\ntotaladdgtime\tstring\tfrom deserializer\nlongestaddgtime\tstring\tfrom deserializer\ndivairportlandings\tstring\tfrom deserializer\ndivreacheddest\tstring\tfrom deserializer\ndivactualelapsedtime\tstring\tfrom deserializer\ndivarrdelay\tstring\tfrom deserializer\ndivdistance\tstring\tfrom deserializer\ndiv1airport\tstring\tfrom deserializer\ndiv1airportid\tstring\tfrom deserializer\ndiv1airportseqid\tstring\tfrom deserializer\ndiv1wheelson\tstring\tfrom deserializer\ndiv1totalgtime\tstring\tfrom deserializer\ndiv1longestgtime\tstring\tfrom deserializer\ndiv1wheelsoff\tstring\tfrom deserializer\ndiv1tailnum\tstring\tfrom deserializer\ndiv2airport\tstring\tfrom deserializer\ndiv2airportid\tstring\tfrom deserializer\ndiv2airportseqid\tstring\tfrom deserializer\ndiv2wheelson\tstring\tfrom deserializer\ndiv2totalgtime\tstring\tfrom deserializer\ndiv2longestgtime\tstring\tfrom deserializer\ndiv2wheelsoff\tstring\tfrom deserializer\ndiv2tailnum\tstring\tfrom deserializer\ndiv3airport\tstring\tfrom deserializer\ndiv3airportid\tstring\tfrom deserializer\ndiv3airportseqid\tstring\tfrom deserializer\ndiv3wheelson\tstring\tfrom deserializer\ndiv3totalgtime\tstring\tfrom deserializer\ndiv3longestgtime\tstring\tfrom deserializer\ndiv3wheelsoff\tstring\tfrom deserializer\ndiv3tailnum\tstring\tfrom deserializer\ndiv4airport\tstring\tfrom deserializer\ndiv4airportid\tstring\tfrom deserializer\ndiv4airportseqid\tstring\tfrom deserializer\ndiv4wheelson\tstring\tfrom deserializer\ndiv4totalgtime\tstring\tfrom deserializer\ndiv4longestgtime\tstring\tfrom deserializer\ndiv4wheelsoff\tstring\tfrom deserializer\ndiv4tailnum\tstring\tfrom deserializer\ndiv5airport\tstring\tfrom deserializer\ndiv5airportid\tstring\tfrom deserializer\ndiv5airportseqid\tstring\tfrom deserializer\ndiv5wheelson\tstring\tfrom deserializer\ndiv5totalgtime\tstring\tfrom deserializer\ndiv5longestgtime\tstring\tfrom deserializer\ndiv5wheelsoff\tstring\tfrom deserializer\ndiv5tailnum\tstring\tfrom deserializer\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%jdbc\nselect count(*) from flights;",
+      "user": "anonymous",
+      "dateUpdated": "2021-02-04T21:21:31+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -1074,12 +1148,12 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1100,10 +1174,10 @@
       "jobName": "paragraph_1612277333867_904551963",
       "id": "paragraph_1612277333867_904551963",
       "dateCreated": "2021-02-02T14:48:53+0000",
-      "dateStarted": "2021-02-02T18:38:01+0000",
-      "dateFinished": "2021-02-02T18:39:44+0000",
+      "dateStarted": "2021-02-04T21:21:31+0000",
+      "dateFinished": "2021-02-04T21:23:18+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:290"
+      "$$hashKey": "object:209226"
     },
     {
       "text": "%sh\nhdfs dfs -ls /user/hive/data/flights",
@@ -1144,24 +1218,24 @@
       "dateStarted": "2021-02-02T15:48:49+0000",
       "dateFinished": "2021-02-02T15:48:51+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:291"
+      "$$hashKey": "object:209227"
     },
     {
-      "text": "%sql\nDROP TABLE flights_as_parquet",
+      "text": "%jdbc\nDROP TABLE flights_as_parquet;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:31+0000",
+      "dateUpdated": "2021-02-04T23:00:12+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1182,27 +1256,27 @@
       "jobName": "paragraph_1612281016683_196990844",
       "id": "paragraph_1612281016683_196990844",
       "dateCreated": "2021-02-02T15:50:16+0000",
-      "dateStarted": "2021-02-02T18:40:24+0000",
-      "dateFinished": "2021-02-02T18:40:24+0000",
+      "dateStarted": "2021-02-04T23:00:12+0000",
+      "dateFinished": "2021-02-04T23:00:12+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:292"
+      "$$hashKey": "object:209228"
     },
     {
-      "text": "%sql\nCREATE EXTERNAL TABLE IF NOT EXISTS flights_as_parquet (Year INT,\n\tQuarter INT,\n\tMonth INT,\n\tDayofMonth INT,\n\tDayOfWeek INT,\n\tFlightDate STRING,\n\tReporting_Airline STRING,\n\tDOT_ID_Reporting_Airline STRING,\n\tIATA_CODE_Reporting_Airline STRING,\n\tTail_Number STRING,\n\tFlight_Number_Reporting_Airline STRING,\n\tOriginAirportID STRING,\n\tOriginAirportSeqID STRING,\n\tOriginCityMarketID STRING,\n\tOrigin STRING,\n\tOriginCityName STRING,\n\tOriginState STRING,\n\tOriginStateFips STRING,\n\tOriginStateName STRING,\n\tOriginWac STRING,\n\tDestAirportID STRING,\n\tDestAirportSeqID STRING,\n\tDestCityMarketID STRING,\n\tDest STRING,\n\tDestCityName STRING,\n\tDestState STRING,\n\tDestStateFips STRING,\n\tDestStateName STRING,\n\tDestWac STRING,\n\tCRSDepTime STRING,\n\tDepTime STRING,\n\tDepDelay STRING,\n\tDepDelayMinutes STRING,\n\tDepDel15 STRING,\n\tDepartureDelayGroups STRING,\n\tDepTimeBlk STRING,\n\tTaxiOut STRING,\n\tWheelsOff STRING,\n\tWheelsOn STRING,\n\tTaxiIn STRING,\n\tCRSArrTime STRING,\n\tArrTime STRING,\n\tArrDelay STRING,\n\tArrDelayMinutes STRING,\n\tArrDel15 STRING,\n\tArrivalDelayGroups STRING,\n\tArrTimeBlk STRING,\n\tCancelled STRING,\n\tCancellationCode STRING,\n\tDiverted STRING,\n\tCRSElapsedTime STRING,\n\tActualElapsedTime STRING,\n\tAirTime STRING,\n\tFlights STRING,\n\tDistance STRING,\n\tDistanceGroup STRING,\n\tCarrierDelay STRING,\n\tWeatherDelay STRING,\n\tNASDelay STRING,\n\tSecurityDelay STRING,\n\tLateAircraftDelay STRING,\n\tFirstDepTime STRING,\n\tTotalAddGTime STRING,\n\tLongestAddGTime STRING,\n\tDivAirportLandings STRING,\n\tDivReachedDest STRING,\n\tDivActualElapsedTime STRING,\n\tDivArrDelay STRING,\n\tDivDistance STRING,\n\tDiv1Airport STRING,\n\tDiv1AirportID STRING,\n\tDiv1AirportSeqID STRING,\n\tDiv1WheelsOn STRING,\n\tDiv1TotalGTime STRING,\n\tDiv1LongestGTime STRING,\n\tDiv1WheelsOff STRING,\n\tDiv1TailNum STRING,\n\tDiv2Airport STRING,\n\tDiv2AirportID STRING,\n\tDiv2AirportSeqID STRING,\n\tDiv2WheelsOn STRING,\n\tDiv2TotalGTime STRING,\n\tDiv2LongestGTime STRING,\n\tDiv2WheelsOff STRING,\n\tDiv2TailNum STRING,\n\tDiv3Airport STRING,\n\tDiv3AirportID STRING,\n\tDiv3AirportSeqID STRING,\n\tDiv3WheelsOn STRING,\n\tDiv3TotalGTime STRING,\n\tDiv3LongestGTime STRING,\n\tDiv3WheelsOff STRING,\n\tDiv3TailNum STRING,\n\tDiv4Airport STRING,\n\tDiv4AirportID STRING,\n\tDiv4AirportSeqID STRING,\n\tDiv4WheelsOn STRING,\n\tDiv4TotalGTime STRING,\n\tDiv4LongestGTime STRING,\n\tDiv4WheelsOff STRING,\n\tDiv4TailNum STRING,\n\tDiv5Airport STRING,\n\tDiv5AirportID STRING,\n\tDiv5AirportSeqID STRING,\n\tDiv5WheelsOn STRING,\n\tDiv5TotalGTime STRING,\n\tDiv5LongestGTime STRING,\n\tDiv5WheelsOff STRING,\n\tDiv5TailNum STRING)\nSTORED AS PARQUET LOCATION '/user/hive/data/flights_as_parquet';",
+      "text": "%jdbc\nCREATE EXTERNAL TABLE IF NOT EXISTS flights_as_parquet (Year INT,\n\tQuarter INT,\n\tMonth INT,\n\tDayofMonth INT,\n\tDayOfWeek INT,\n\tFlightDate STRING,\n\tReporting_Airline STRING,\n\tDOT_ID_Reporting_Airline STRING,\n\tIATA_CODE_Reporting_Airline STRING,\n\tTail_Number STRING,\n\tFlight_Number_Reporting_Airline STRING,\n\tOriginAirportID STRING,\n\tOriginAirportSeqID STRING,\n\tOriginCityMarketID STRING,\n\tOrigin STRING,\n\tOriginCityName STRING,\n\tOriginState STRING,\n\tOriginStateFips STRING,\n\tOriginStateName STRING,\n\tOriginWac STRING,\n\tDestAirportID STRING,\n\tDestAirportSeqID STRING,\n\tDestCityMarketID STRING,\n\tDest STRING,\n\tDestCityName STRING,\n\tDestState STRING,\n\tDestStateFips STRING,\n\tDestStateName STRING,\n\tDestWac STRING,\n\tCRSDepTime STRING,\n\tDepTime STRING,\n\tDepDelay STRING,\n\tDepDelayMinutes STRING,\n\tDepDel15 STRING,\n\tDepartureDelayGroups STRING,\n\tDepTimeBlk STRING,\n\tTaxiOut STRING,\n\tWheelsOff STRING,\n\tWheelsOn STRING,\n\tTaxiIn STRING,\n\tCRSArrTime STRING,\n\tArrTime STRING,\n\tArrDelay STRING,\n\tArrDelayMinutes STRING,\n\tArrDel15 STRING,\n\tArrivalDelayGroups STRING,\n\tArrTimeBlk STRING,\n\tCancelled STRING,\n\tCancellationCode STRING,\n\tDiverted STRING,\n\tCRSElapsedTime STRING,\n\tActualElapsedTime STRING,\n\tAirTime STRING,\n\tFlights STRING,\n\tDistance STRING,\n\tDistanceGroup STRING,\n\tCarrierDelay STRING,\n\tWeatherDelay STRING,\n\tNASDelay STRING,\n\tSecurityDelay STRING,\n\tLateAircraftDelay STRING,\n\tFirstDepTime STRING,\n\tTotalAddGTime STRING,\n\tLongestAddGTime STRING,\n\tDivAirportLandings STRING,\n\tDivReachedDest STRING,\n\tDivActualElapsedTime STRING,\n\tDivArrDelay STRING,\n\tDivDistance STRING,\n\tDiv1Airport STRING,\n\tDiv1AirportID STRING,\n\tDiv1AirportSeqID STRING,\n\tDiv1WheelsOn STRING,\n\tDiv1TotalGTime STRING,\n\tDiv1LongestGTime STRING,\n\tDiv1WheelsOff STRING,\n\tDiv1TailNum STRING,\n\tDiv2Airport STRING,\n\tDiv2AirportID STRING,\n\tDiv2AirportSeqID STRING,\n\tDiv2WheelsOn STRING,\n\tDiv2TotalGTime STRING,\n\tDiv2LongestGTime STRING,\n\tDiv2WheelsOff STRING,\n\tDiv2TailNum STRING,\n\tDiv3Airport STRING,\n\tDiv3AirportID STRING,\n\tDiv3AirportSeqID STRING,\n\tDiv3WheelsOn STRING,\n\tDiv3TotalGTime STRING,\n\tDiv3LongestGTime STRING,\n\tDiv3WheelsOff STRING,\n\tDiv3TailNum STRING,\n\tDiv4Airport STRING,\n\tDiv4AirportID STRING,\n\tDiv4AirportSeqID STRING,\n\tDiv4WheelsOn STRING,\n\tDiv4TotalGTime STRING,\n\tDiv4LongestGTime STRING,\n\tDiv4WheelsOff STRING,\n\tDiv4TailNum STRING,\n\tDiv5Airport STRING,\n\tDiv5AirportID STRING,\n\tDiv5AirportSeqID STRING,\n\tDiv5WheelsOn STRING,\n\tDiv5TotalGTime STRING,\n\tDiv5LongestGTime STRING,\n\tDiv5WheelsOff STRING,\n\tDiv5TailNum STRING)\nSTORED AS PARQUET LOCATION '/user/hive/data/flights_as_parquet';",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:27+0000",
+      "dateUpdated": "2021-02-04T23:00:27+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1223,26 +1297,26 @@
       "jobName": "paragraph_1612280929404_1476956725",
       "id": "paragraph_1612280929404_1476956725",
       "dateCreated": "2021-02-02T15:48:49+0000",
-      "dateStarted": "2021-02-02T18:40:27+0000",
-      "dateFinished": "2021-02-02T18:40:27+0000",
+      "dateStarted": "2021-02-04T23:00:27+0000",
+      "dateFinished": "2021-02-04T23:00:27+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:293"
+      "$$hashKey": "object:209229"
     },
     {
       "text": "%sh\nhdfs dfs -chmod 777 /user/hive/data/flights_as_parquet",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T21:03:54+0000",
+      "dateUpdated": "2021-02-04T21:32:01+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "text",
+          "language": "sh",
           "editOnDblClick": false,
           "completionSupport": false
         },
-        "editorMode": "ace/mode/text"
+        "editorMode": "ace/mode/sh"
       },
       "settings": {
         "params": {},
@@ -1258,15 +1332,86 @@
       "jobName": "paragraph_1612282821334_1626845800",
       "id": "paragraph_1612282821334_1626845800",
       "dateCreated": "2021-02-02T16:20:21+0000",
-      "dateStarted": "2021-02-02T16:20:38+0000",
-      "dateFinished": "2021-02-02T16:20:40+0000",
+      "dateStarted": "2021-02-04T21:32:01+0000",
+      "dateFinished": "2021-02-04T21:32:03+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:294"
+      "$$hashKey": "object:209230"
     },
     {
-      "text": "%sql\nINSERT OVERWRITE TABLE flights_as_parquet SELECT * FROM flights;",
+      "text": "%jdbc\ndescribe flights_as_parquet;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:01:04+0000",
+      "dateUpdated": "2021-02-04T23:00:48+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "col_name": "string",
+                      "data_type": "string",
+                      "comment": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1612473805528_-738869938",
+      "id": "paragraph_1612473805528_-738869938",
+      "dateCreated": "2021-02-04T21:23:25+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:220407",
+      "dateFinished": "2021-02-04T23:00:49+0000",
+      "dateStarted": "2021-02-04T23:00:48+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "col_name\tdata_type\tcomment\nyear\tint\t\nquarter\tint\t\nmonth\tint\t\ndayofmonth\tint\t\ndayofweek\tint\t\nflightdate\tstring\t\nreporting_airline\tstring\t\ndot_id_reporting_airline\tstring\t\niata_code_reporting_airline\tstring\t\ntail_number\tstring\t\nflight_number_reporting_airline\tstring\t\noriginairportid\tstring\t\noriginairportseqid\tstring\t\norigincitymarketid\tstring\t\norigin\tstring\t\norigincityname\tstring\t\noriginstate\tstring\t\noriginstatefips\tstring\t\noriginstatename\tstring\t\noriginwac\tstring\t\ndestairportid\tstring\t\ndestairportseqid\tstring\t\ndestcitymarketid\tstring\t\ndest\tstring\t\ndestcityname\tstring\t\ndeststate\tstring\t\ndeststatefips\tstring\t\ndeststatename\tstring\t\ndestwac\tstring\t\ncrsdeptime\tstring\t\ndeptime\tstring\t\ndepdelay\tstring\t\ndepdelayminutes\tstring\t\ndepdel15\tstring\t\ndeparturedelaygroups\tstring\t\ndeptimeblk\tstring\t\ntaxiout\tstring\t\nwheelsoff\tstring\t\nwheelson\tstring\t\ntaxiin\tstring\t\ncrsarrtime\tstring\t\narrtime\tstring\t\narrdelay\tstring\t\narrdelayminutes\tstring\t\narrdel15\tstring\t\narrivaldelaygroups\tstring\t\narrtimeblk\tstring\t\ncancelled\tstring\t\ncancellationcode\tstring\t\ndiverted\tstring\t\ncrselapsedtime\tstring\t\nactualelapsedtime\tstring\t\nairtime\tstring\t\nflights\tstring\t\ndistance\tstring\t\ndistancegroup\tstring\t\ncarrierdelay\tstring\t\nweatherdelay\tstring\t\nnasdelay\tstring\t\nsecuritydelay\tstring\t\nlateaircraftdelay\tstring\t\nfirstdeptime\tstring\t\ntotaladdgtime\tstring\t\nlongestaddgtime\tstring\t\ndivairportlandings\tstring\t\ndivreacheddest\tstring\t\ndivactualelapsedtime\tstring\t\ndivarrdelay\tstring\t\ndivdistance\tstring\t\ndiv1airport\tstring\t\ndiv1airportid\tstring\t\ndiv1airportseqid\tstring\t\ndiv1wheelson\tstring\t\ndiv1totalgtime\tstring\t\ndiv1longestgtime\tstring\t\ndiv1wheelsoff\tstring\t\ndiv1tailnum\tstring\t\ndiv2airport\tstring\t\ndiv2airportid\tstring\t\ndiv2airportseqid\tstring\t\ndiv2wheelson\tstring\t\ndiv2totalgtime\tstring\t\ndiv2longestgtime\tstring\t\ndiv2wheelsoff\tstring\t\ndiv2tailnum\tstring\t\ndiv3airport\tstring\t\ndiv3airportid\tstring\t\ndiv3airportseqid\tstring\t\ndiv3wheelson\tstring\t\ndiv3totalgtime\tstring\t\ndiv3longestgtime\tstring\t\ndiv3wheelsoff\tstring\t\ndiv3tailnum\tstring\t\ndiv4airport\tstring\t\ndiv4airportid\tstring\t\ndiv4airportseqid\tstring\t\ndiv4wheelson\tstring\t\ndiv4totalgtime\tstring\t\ndiv4longestgtime\tstring\t\ndiv4wheelsoff\tstring\t\ndiv4tailnum\tstring\t\ndiv5airport\tstring\t\ndiv5airportid\tstring\t\ndiv5airportseqid\tstring\t\ndiv5wheelson\tstring\t\ndiv5totalgtime\tstring\t\ndiv5longestgtime\tstring\t\ndiv5wheelsoff\tstring\t\ndiv5tailnum\tstring\t\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%jdbc\nINSERT OVERWRITE TABLE flights_as_parquet \nSELECT cast(Year as INT),\n    cast(Quarter as INT),\n    cast(Month as INT),\n    cast(DayofMonth as INT),\n    cast(DayOfWeek as INT),\n    FlightDate,\n    Reporting_Airline,\n    DOT_ID_Reporting_Airline,\n    IATA_CODE_Reporting_Airline,\n    Tail_Number,\n    Flight_Number_Reporting_Airline,\n    OriginAirportID,\n    OriginAirportSeqID,\n    OriginCityMarketID,\n    Origin,\n    OriginCityName,\n    OriginState,\n    OriginStateFips,\n    OriginStateName,\n    OriginWac,\n    DestAirportID,\n    DestAirportSeqID,\n    DestCityMarketID,\n    Dest,\n    DestCityName,\n    DestState,\n    DestStateFips,\n    DestStateName,\n    DestWac,\n    CRSDepTime,\n    DepTime,\n    DepDelay,\n    DepDelayMinutes,\n    DepDel15,\n    DepartureDelayGroups,\n    DepTimeBlk,\n    TaxiOut,\n    WheelsOff,\n    WheelsOn,\n    TaxiIn,\n    CRSArrTime,\n    ArrTime,\n    ArrDelay,\n    ArrDelayMinutes,\n    ArrDel15,\n    ArrivalDelayGroups,\n    ArrTimeBlk,\n    Cancelled,\n    CancellationCode,\n    Diverted,\n    CRSElapsedTime,\n    ActualElapsedTime,\n    AirTime,\n    Flights,\n    Distance,\n    DistanceGroup,\n    CarrierDelay,\n    WeatherDelay,\n    NASDelay,\n    SecurityDelay,\n    LateAircraftDelay,\n    FirstDepTime,\n    TotalAddGTime,\n    LongestAddGTime,\n    DivAirportLandings,\n    DivReachedDest,\n    DivActualElapsedTime,\n    DivArrDelay,\n    DivDistance,\n    Div1Airport,\n    Div1AirportID,\n    Div1AirportSeqID,\n    Div1WheelsOn,\n    Div1TotalGTime,\n    Div1LongestGTime,\n    Div1WheelsOff,\n    Div1TailNum,\n    Div2Airport,\n    Div2AirportID,\n    Div2AirportSeqID,\n    Div2WheelsOn,\n    Div2TotalGTime,\n    Div2LongestGTime,\n    Div2WheelsOff,\n    Div2TailNum,\n    Div3Airport,\n    Div3AirportID,\n    Div3AirportSeqID,\n    Div3WheelsOn,\n    Div3TotalGTime,\n    Div3LongestGTime,\n    Div3WheelsOff,\n    Div3TailNum,\n    Div4Airport,\n    Div4AirportID,\n    Div4AirportSeqID,\n    Div4WheelsOn,\n    Div4TotalGTime,\n    Div4LongestGTime,\n    Div4WheelsOff,\n    Div4TailNum,\n    Div5Airport,\n    Div5AirportID,\n    Div5AirportSeqID,\n    Div5WheelsOn,\n    Div5TotalGTime,\n    Div5LongestGTime,\n    Div5WheelsOff,\n    Div5TailNum \nFROM flights;",
+      "user": "anonymous",
+      "dateUpdated": "2021-02-04T23:02:43+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -1409,12 +1554,12 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1435,15 +1580,262 @@
       "jobName": "paragraph_1612281500018_-1710638624",
       "id": "paragraph_1612281500018_-1710638624",
       "dateCreated": "2021-02-02T15:58:20+0000",
-      "dateStarted": "2021-02-02T18:40:40+0000",
-      "dateFinished": "2021-02-02T18:45:12+0000",
+      "dateStarted": "2021-02-04T23:02:43+0000",
+      "dateFinished": "2021-02-04T23:07:10+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:295"
+      "$$hashKey": "object:209231"
     },
     {
-      "text": "%sql\n\nSELECT \"flights_as_parquet\", count(*) AS nb_lines FROM flights_as_parquet UNION ALL SELECT \"flights\", count(*) AS nb_lines FROM flights;",
+      "text": "%jdbc\ndescribe flights_as_parquet;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T21:23:58+0000",
+      "dateUpdated": "2021-02-04T23:08:24+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "col_name": "string",
+                      "data_type": "string",
+                      "comment": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1612480081410_-781410431",
+      "id": "paragraph_1612480081410_-781410431",
+      "dateCreated": "2021-02-04T23:08:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:271019",
+      "dateFinished": "2021-02-04T23:08:22+0000",
+      "dateStarted": "2021-02-04T23:08:22+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "col_name\tdata_type\tcomment\nyear\tint\t\nquarter\tint\t\nmonth\tint\t\ndayofmonth\tint\t\ndayofweek\tint\t\nflightdate\tstring\t\nreporting_airline\tstring\t\ndot_id_reporting_airline\tstring\t\niata_code_reporting_airline\tstring\t\ntail_number\tstring\t\nflight_number_reporting_airline\tstring\t\noriginairportid\tstring\t\noriginairportseqid\tstring\t\norigincitymarketid\tstring\t\norigin\tstring\t\norigincityname\tstring\t\noriginstate\tstring\t\noriginstatefips\tstring\t\noriginstatename\tstring\t\noriginwac\tstring\t\ndestairportid\tstring\t\ndestairportseqid\tstring\t\ndestcitymarketid\tstring\t\ndest\tstring\t\ndestcityname\tstring\t\ndeststate\tstring\t\ndeststatefips\tstring\t\ndeststatename\tstring\t\ndestwac\tstring\t\ncrsdeptime\tstring\t\ndeptime\tstring\t\ndepdelay\tstring\t\ndepdelayminutes\tstring\t\ndepdel15\tstring\t\ndeparturedelaygroups\tstring\t\ndeptimeblk\tstring\t\ntaxiout\tstring\t\nwheelsoff\tstring\t\nwheelson\tstring\t\ntaxiin\tstring\t\ncrsarrtime\tstring\t\narrtime\tstring\t\narrdelay\tstring\t\narrdelayminutes\tstring\t\narrdel15\tstring\t\narrivaldelaygroups\tstring\t\narrtimeblk\tstring\t\ncancelled\tstring\t\ncancellationcode\tstring\t\ndiverted\tstring\t\ncrselapsedtime\tstring\t\nactualelapsedtime\tstring\t\nairtime\tstring\t\nflights\tstring\t\ndistance\tstring\t\ndistancegroup\tstring\t\ncarrierdelay\tstring\t\nweatherdelay\tstring\t\nnasdelay\tstring\t\nsecuritydelay\tstring\t\nlateaircraftdelay\tstring\t\nfirstdeptime\tstring\t\ntotaladdgtime\tstring\t\nlongestaddgtime\tstring\t\ndivairportlandings\tstring\t\ndivreacheddest\tstring\t\ndivactualelapsedtime\tstring\t\ndivarrdelay\tstring\t\ndivdistance\tstring\t\ndiv1airport\tstring\t\ndiv1airportid\tstring\t\ndiv1airportseqid\tstring\t\ndiv1wheelson\tstring\t\ndiv1totalgtime\tstring\t\ndiv1longestgtime\tstring\t\ndiv1wheelsoff\tstring\t\ndiv1tailnum\tstring\t\ndiv2airport\tstring\t\ndiv2airportid\tstring\t\ndiv2airportseqid\tstring\t\ndiv2wheelson\tstring\t\ndiv2totalgtime\tstring\t\ndiv2longestgtime\tstring\t\ndiv2wheelsoff\tstring\t\ndiv2tailnum\tstring\t\ndiv3airport\tstring\t\ndiv3airportid\tstring\t\ndiv3airportseqid\tstring\t\ndiv3wheelson\tstring\t\ndiv3totalgtime\tstring\t\ndiv3longestgtime\tstring\t\ndiv3wheelsoff\tstring\t\ndiv3tailnum\tstring\t\ndiv4airport\tstring\t\ndiv4airportid\tstring\t\ndiv4airportseqid\tstring\t\ndiv4wheelson\tstring\t\ndiv4totalgtime\tstring\t\ndiv4longestgtime\tstring\t\ndiv4wheelsoff\tstring\t\ndiv4tailnum\tstring\t\ndiv5airport\tstring\t\ndiv5airportid\tstring\t\ndiv5airportseqid\tstring\t\ndiv5wheelson\tstring\t\ndiv5totalgtime\tstring\t\ndiv5longestgtime\tstring\t\ndiv5wheelsoff\tstring\t\ndiv5tailnum\tstring\t\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%jdbc\nselect * from flights_as_parquet limit 10;",
+      "user": "anonymous",
+      "dateUpdated": "2021-02-04T23:08:27+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "year": "string",
+                      "quarter": "string",
+                      "month": "string",
+                      "dayofmonth": "string",
+                      "dayofweek": "string",
+                      "flightdate": "string",
+                      "reporting_airline": "string",
+                      "dot_id_reporting_airline": "string",
+                      "iata_code_reporting_airline": "string",
+                      "tail_number": "string",
+                      "flight_number_reporting_airline": "string",
+                      "originairportid": "string",
+                      "originairportseqid": "string",
+                      "origincitymarketid": "string",
+                      "origin": "string",
+                      "origincityname": "string",
+                      "originstate": "string",
+                      "originstatefips": "string",
+                      "originstatename": "string",
+                      "originwac": "string",
+                      "destairportid": "string",
+                      "destairportseqid": "string",
+                      "destcitymarketid": "string",
+                      "dest": "string",
+                      "destcityname": "string",
+                      "deststate": "string",
+                      "deststatefips": "string",
+                      "deststatename": "string",
+                      "destwac": "string",
+                      "crsdeptime": "string",
+                      "deptime": "string",
+                      "depdelay": "string",
+                      "depdelayminutes": "string",
+                      "depdel15": "string",
+                      "departuredelaygroups": "string",
+                      "deptimeblk": "string",
+                      "taxiout": "string",
+                      "wheelsoff": "string",
+                      "wheelson": "string",
+                      "taxiin": "string",
+                      "crsarrtime": "string",
+                      "arrtime": "string",
+                      "arrdelay": "string",
+                      "arrdelayminutes": "string",
+                      "arrdel15": "string",
+                      "arrivaldelaygroups": "string",
+                      "arrtimeblk": "string",
+                      "cancelled": "string",
+                      "cancellationcode": "string",
+                      "diverted": "string",
+                      "crselapsedtime": "string",
+                      "actualelapsedtime": "string",
+                      "airtime": "string",
+                      "flights": "string",
+                      "distance": "string",
+                      "distancegroup": "string",
+                      "carrierdelay": "string",
+                      "weatherdelay": "string",
+                      "nasdelay": "string",
+                      "securitydelay": "string",
+                      "lateaircraftdelay": "string",
+                      "firstdeptime": "string",
+                      "totaladdgtime": "string",
+                      "longestaddgtime": "string",
+                      "divairportlandings": "string",
+                      "divreacheddest": "string",
+                      "divactualelapsedtime": "string",
+                      "divarrdelay": "string",
+                      "divdistance": "string",
+                      "div1airport": "string",
+                      "div1airportid": "string",
+                      "div1airportseqid": "string",
+                      "div1wheelson": "string",
+                      "div1totalgtime": "string",
+                      "div1longestgtime": "string",
+                      "div1wheelsoff": "string",
+                      "div1tailnum": "string",
+                      "div2airport": "string",
+                      "div2airportid": "string",
+                      "div2airportseqid": "string",
+                      "div2wheelson": "string",
+                      "div2totalgtime": "string",
+                      "div2longestgtime": "string",
+                      "div2wheelsoff": "string",
+                      "div2tailnum": "string",
+                      "div3airport": "string",
+                      "div3airportid": "string",
+                      "div3airportseqid": "string",
+                      "div3wheelson": "string",
+                      "div3totalgtime": "string",
+                      "div3longestgtime": "string",
+                      "div3wheelsoff": "string",
+                      "div3tailnum": "string",
+                      "div4airport": "string",
+                      "div4airportid": "string",
+                      "div4airportseqid": "string",
+                      "div4wheelson": "string",
+                      "div4totalgtime": "string",
+                      "div4longestgtime": "string",
+                      "div4wheelsoff": "string",
+                      "div4tailnum": "string",
+                      "div5airport": "string",
+                      "div5airportid": "string",
+                      "div5airportseqid": "string",
+                      "div5wheelson": "string",
+                      "div5totalgtime": "string",
+                      "div5longestgtime": "string",
+                      "div5wheelsoff": "string",
+                      "div5tailnum": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1612473840002_796255528",
+      "id": "paragraph_1612473840002_796255528",
+      "dateCreated": "2021-02-04T21:24:00+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:221279",
+      "dateFinished": "2021-02-04T23:08:29+0000",
+      "dateStarted": "2021-02-04T23:08:27+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "year\tquarter\tmonth\tdayofmonth\tdayofweek\tflightdate\treporting_airline\tdot_id_reporting_airline\tiata_code_reporting_airline\ttail_number\tflight_number_reporting_airline\toriginairportid\toriginairportseqid\torigincitymarketid\torigin\torigincityname\toriginstate\toriginstatefips\toriginstatename\toriginwac\tdestairportid\tdestairportseqid\tdestcitymarketid\tdest\tdestcityname\tdeststate\tdeststatefips\tdeststatename\tdestwac\tcrsdeptime\tdeptime\tdepdelay\tdepdelayminutes\tdepdel15\tdeparturedelaygroups\tdeptimeblk\ttaxiout\twheelsoff\twheelson\ttaxiin\tcrsarrtime\tarrtime\tarrdelay\tarrdelayminutes\tarrdel15\tarrivaldelaygroups\tarrtimeblk\tcancelled\tcancellationcode\tdiverted\tcrselapsedtime\tactualelapsedtime\tairtime\tflights\tdistance\tdistancegroup\tcarrierdelay\tweatherdelay\tnasdelay\tsecuritydelay\tlateaircraftdelay\tfirstdeptime\ttotaladdgtime\tlongestaddgtime\tdivairportlandings\tdivreacheddest\tdivactualelapsedtime\tdivarrdelay\tdivdistance\tdiv1airport\tdiv1airportid\tdiv1airportseqid\tdiv1wheelson\tdiv1totalgtime\tdiv1longestgtime\tdiv1wheelsoff\tdiv1tailnum\tdiv2airport\tdiv2airportid\tdiv2airportseqid\tdiv2wheelson\tdiv2totalgtime\tdiv2longestgtime\tdiv2wheelsoff\tdiv2tailnum\tdiv3airport\tdiv3airportid\tdiv3airportseqid\tdiv3wheelson\tdiv3totalgtime\tdiv3longestgtime\tdiv3wheelsoff\tdiv3tailnum\tdiv4airport\tdiv4airportid\tdiv4airportseqid\tdiv4wheelson\tdiv4totalgtime\tdiv4longestgtime\tdiv4wheelsoff\tdiv4tailnum\tdiv5airport\tdiv5airportid\tdiv5airportseqid\tdiv5wheelson\tdiv5totalgtime\tdiv5longestgtime\tdiv5wheelsoff\tdiv5tailnum\n2019\t3\t7\t24\t3\t2019-07-24\tG4\t20368\tG4\t249NV\t1246\t14112\t1411206\t33195\tPIE\tSt. Petersburg, FL\tFL\t12\tFlorida\t33\t10431\t1043105\t30431\tAVL\tAsheville, NC\tNC\t37\tNorth Carolina\t36\t1511\t1533\t22.00\t22.00\t1.00\t1\t1500-1559\t13.00\t1546\t1652\t7.00\t1644\t1659\t15.00\t15.00\t1.00\t1\t1600-1659\t0.00\t\t0.00\t93.00\t86.00\t66.00\t1.00\t519.00\t3\t0.00\t7.00\t0.00\t0.00\t8.00\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t29\t1\t2019-07-29\tG4\t20368\tG4\t319NV\t2106\t10423\t1042302\t30423\tAUS\tAustin, TX\tTX\t48\tTexas\t74\t14761\t1476107\t34761\tSFB\tSanford, FL\tFL\t12\tFlorida\t33\t2002\t2010\t8.00\t8.00\t0.00\t0\t2000-2059\t16.00\t2026\t2338\t6.00\t2335\t2344\t9.00\t9.00\t0.00\t0\t2300-2359\t0.00\t\t0.00\t153.00\t154.00\t132.00\t1.00\t994.00\t4\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t7\t7\t2019-07-07\tG4\t20368\tG4\t324NV\t112\t11980\t1198002\t31980\tGRI\tGrand Island, NE\tNE\t31\tNebraska\t65\t12889\t1288903\t32211\tLAS\tLas Vegas, NV\tNV\t32\tNevada\t85\t1118\t1118\t0.00\t0.00\t0.00\t0\t1100-1159\t7.00\t1125\t1133\t6.00\t1144\t1139\t-5.00\t0.00\t0.00\t-1\t1100-1159\t0.00\t\t0.00\t146.00\t141.00\t128.00\t1.00\t971.00\t4\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t7\t7\t2019-07-07\tG4\t20368\tG4\t325NV\t802\t10423\t1042302\t30423\tAUS\tAustin, TX\tTX\t48\tTexas\t74\t13244\t1324402\t33244\tMEM\tMemphis, TN\tTN\t47\tTennessee\t54\t1643\t1726\t43.00\t43.00\t1.00\t2\t1600-1659\t12.00\t1738\t1913\t9.00\t1827\t1922\t55.00\t55.00\t1.00\t3\t1800-1859\t0.00\t\t0.00\t104.00\t116.00\t95.00\t1.00\t559.00\t3\t43.00\t0.00\t12.00\t0.00\t0.00\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t8\t1\t2019-07-08\tG4\t20368\tG4\t261NV\t833\t12339\t1233904\t32337\tIND\tIndianapolis, IN\tIN\t18\tIndiana\t42\t14112\t1411206\t33195\tPIE\tSt. Petersburg, FL\tFL\t12\tFlorida\t33\t0858\t0905\t7.00\t7.00\t0.00\t0\t0800-0859\t10.00\t0915\t1113\t6.00\t1107\t1119\t12.00\t12.00\t0.00\t0\t1100-1159\t0.00\t\t0.00\t129.00\t134.00\t118.00\t1.00\t840.00\t4\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t20\t6\t2019-07-20\tG4\t20368\tG4\t222NV\t1729\t14025\t1402501\t34025\tPBG\tPlattsburgh, NY\tNY\t36\tNew York\t22\t11697\t1169706\t32467\tFLL\tFort Lauderdale, FL\tFL\t12\tFlorida\t33\t1139\t1135\t-4.00\t0.00\t0.00\t-1\t1100-1159\t5.00\t1140\t1428\t8.00\t1457\t1436\t-21.00\t0.00\t0.00\t-2\t1400-1459\t0.00\t\t0.00\t198.00\t181.00\t168.00\t1.00\t1334.00\t6\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t25\t4\t2019-07-25\tG4\t20368\tG4\t229NV\t2400\t11986\t1198603\t31986\tGRR\tGrand Rapids, MI\tMI\t26\tMichigan\t43\t10466\t1046602\t30466\tAZA\tPhoenix, AZ\tAZ\t04\tArizona\t81\t1233\t1240\t7.00\t7.00\t0.00\t0\t1200-1259\t11.00\t1251\t1302\t12.00\t1315\t1314\t-1.00\t0.00\t0.00\t-1\t1300-1359\t0.00\t\t0.00\t222.00\t214.00\t191.00\t1.00\t1561.00\t7\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t31\t3\t2019-07-31\tG4\t20368\tG4\t304NV\t2941\t10693\t1069302\t30693\tBNA\tNashville, TN\tTN\t47\tTennessee\t54\t11003\t1100303\t31003\tCID\tCedar Rapids/Iowa City, IA\tIA\t19\tIowa\t61\t1529\t1528\t-1.00\t0.00\t0.00\t-1\t1500-1559\t11.00\t1539\t1647\t7.00\t1701\t1654\t-7.00\t0.00\t0.00\t-1\t1700-1759\t0.00\t\t0.00\t92.00\t86.00\t68.00\t1.00\t481.00\t2\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t2\t2\t2019-07-02\tG4\t20368\tG4\t316NV\t2196\t14761\t1476107\t34761\tSFB\tSanford, FL\tFL\t12\tFlorida\t33\t12992\t1299206\t32600\tLIT\tLittle Rock, AR\tAR\t05\tArkansas\t71\t1800\t1907\t67.00\t67.00\t1.00\t4\t1800-1859\t14.00\t1921\t2008\t8.00\t1911\t2016\t65.00\t65.00\t1.00\t4\t1900-1959\t0.00\t\t0.00\t131.00\t129.00\t107.00\t1.00\t765.00\t4\t0.00\t55.00\t0.00\t0.00\t10.00\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n2019\t3\t7\t2\t2\t2019-07-02\tG4\t20368\tG4\t329NV\t2296\t14761\t1476107\t34761\tSFB\tSanford, FL\tFL\t12\tFlorida\t33\t11423\t1142307\t31423\tDSM\tDes Moines, IA\tIA\t19\tIowa\t61\t1141\t1136\t-5.00\t0.00\t0.00\t-1\t1100-1159\t21.00\t1157\t1322\t5.00\t1330\t1327\t-3.00\t0.00\t0.00\t-1\t1300-1359\t0.00\t\t0.00\t169.00\t171.00\t145.00\t1.00\t1124.00\t5\t\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%jdbc\n\nSELECT \"flights_as_parquet\", count(*) AS nb_lines FROM flights_as_parquet UNION ALL SELECT \"flights\", count(*) AS nb_lines FROM flights;",
+      "user": "anonymous",
+      "dateUpdated": "2021-02-04T23:08:45+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -1479,12 +1871,12 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1495,7 +1887,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "_c0\tnb_lines\nflights_as_partitioned_parquet\t7422037\nflights\t7422037\n"
+            "data": "_c0\tnb_lines\nflights_as_parquet\t7422037\nflights\t7422037\n"
           }
         ]
       },
@@ -1505,10 +1897,10 @@
       "jobName": "paragraph_1612281646222_1667814575",
       "id": "paragraph_1612281646222_1667814575",
       "dateCreated": "2021-02-02T16:00:46+0000",
-      "dateStarted": "2021-02-02T21:11:37+0000",
-      "dateFinished": "2021-02-02T21:13:29+0000",
+      "dateStarted": "2021-02-04T23:08:45+0000",
+      "dateFinished": "2021-02-04T23:10:29+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:296"
+      "$$hashKey": "object:209232"
     },
     {
       "text": "%md\n```sql\n-- Just in case / This is not needed / Do Not Run\nDROP TABLE flights_as_parquet\n```",
@@ -1548,11 +1940,11 @@
       "dateStarted": "2021-02-02T17:45:35+0000",
       "dateFinished": "2021-02-02T17:45:35+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:297"
+      "$$hashKey": "object:209233"
     },
     {
       "title": "Load some REF Data",
-      "text": "%sql\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_airline (Code INT, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_airline'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
+      "text": "%jdbc\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_airline (Code INT, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_airline'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:00:58+0000",
       "config": {
@@ -1561,11 +1953,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -1590,7 +1982,7 @@
       "dateStarted": "2021-02-02T17:57:47+0000",
       "dateFinished": "2021-02-02T17:57:48+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:298"
+      "$$hashKey": "object:209234"
     },
     {
       "text": "%md\nTo allow Hive to move data from source : \n```console\n$ hdfs dfs -chmod 777 /user/root/transtat/ref\n```",
@@ -1629,10 +2021,10 @@
       "dateStarted": "2021-02-02T18:10:59+0000",
       "dateFinished": "2021-02-02T18:10:59+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:299"
+      "$$hashKey": "object:209235"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/ref/AIRLINE_ID.csv' OVERWRITE INTO TABLE ref_airline;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/ref/AIRLINE_ID.csv' OVERWRITE INTO TABLE ref_airline;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:00:53+0000",
       "config": {
@@ -1670,11 +2062,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1698,12 +2090,12 @@
       "dateStarted": "2021-02-02T18:02:28+0000",
       "dateFinished": "2021-02-02T18:02:28+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:300"
+      "$$hashKey": "object:209236"
     },
     {
-      "text": "%sql\nSELECT * FROM ref_airline;",
+      "text": "%jdbc\nSELECT * FROM ref_airline;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:00:47+0000",
+      "dateUpdated": "2021-02-04T23:11:10+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -1739,11 +2131,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1764,13 +2156,13 @@
       "jobName": "paragraph_1612288675713_1264998810",
       "id": "paragraph_1612288675713_1264998810",
       "dateCreated": "2021-02-02T17:57:55+0000",
-      "dateStarted": "2021-02-02T18:02:40+0000",
-      "dateFinished": "2021-02-02T18:02:40+0000",
+      "dateStarted": "2021-02-04T23:11:10+0000",
+      "dateFinished": "2021-02-04T23:11:11+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:301"
+      "$$hashKey": "object:209237"
     },
     {
-      "text": "%sql\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_airport (Code INT, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_airport'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
+      "text": "%jdbc\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_airport (Code INT, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_airport'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:00:46+0000",
       "config": {
@@ -1779,11 +2171,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1807,10 +2199,10 @@
       "dateStarted": "2021-02-02T18:04:57+0000",
       "dateFinished": "2021-02-02T18:04:57+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:302"
+      "$$hashKey": "object:209238"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/ref/AIRPORT_ID.csv' OVERWRITE INTO TABLE ref_airport;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/ref/AIRPORT_ID.csv' OVERWRITE INTO TABLE ref_airport;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:00:40+0000",
       "config": {
@@ -1819,11 +2211,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1847,12 +2239,12 @@
       "dateStarted": "2021-02-02T18:05:12+0000",
       "dateFinished": "2021-02-02T18:05:12+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:303"
+      "$$hashKey": "object:209239"
     },
     {
-      "text": "%sql\nSELECT * FROM ref_airport;",
+      "text": "%jdbc\nSELECT * FROM ref_airport;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:00:34+0000",
+      "dateUpdated": "2021-02-04T23:11:16+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -1888,11 +2280,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -1913,14 +2305,14 @@
       "jobName": "paragraph_1612289112551_681209858",
       "id": "paragraph_1612289112551_681209858",
       "dateCreated": "2021-02-02T18:05:12+0000",
-      "dateStarted": "2021-02-02T18:05:25+0000",
-      "dateFinished": "2021-02-02T18:05:25+0000",
+      "dateStarted": "2021-02-04T23:11:16+0000",
+      "dateFinished": "2021-02-04T23:11:16+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:304"
+      "$$hashKey": "object:209240"
     },
     {
       "title": "Pretty print Columns for Reference",
-      "text": "%sql\ndescribe formatted flights_as_parquet;",
+      "text": "%jdbc\ndescribe formatted flights_as_parquet;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T21:24:00+0000",
       "config": {
@@ -1959,12 +2351,12 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -1989,13 +2381,13 @@
       "dateStarted": "2021-02-02T21:19:21+0000",
       "dateFinished": "2021-02-02T21:19:22+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:305"
+      "$$hashKey": "object:209241"
     },
     {
       "title": "Explore the data a bit",
-      "text": "%sql\nselect count(distinct Tail_Number) from flights_as_parquet;",
+      "text": "%jdbc\nSELECT count(distinct Tail_Number) FROM flights_as_parquet;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T21:24:12+0000",
+      "dateUpdated": "2021-02-04T23:12:54+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2030,11 +2422,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2046,7 +2438,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "_c0\n17\n"
+            "data": "_c0\n5892\n"
           }
         ]
       },
@@ -2056,15 +2448,15 @@
       "jobName": "paragraph_1612289125439_-1495037270",
       "id": "paragraph_1612289125439_-1495037270",
       "dateCreated": "2021-02-02T18:05:25+0000",
-      "dateStarted": "2021-02-02T21:21:51+0000",
-      "dateFinished": "2021-02-02T21:22:11+0000",
+      "dateStarted": "2021-02-04T23:11:56+0000",
+      "dateFinished": "2021-02-04T23:12:13+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:306"
+      "$$hashKey": "object:209242"
     },
     {
-      "text": "%sql\nSELECT flightdate, originairportid,dot_id_reporting_airline from flights_as_parquet LIMIT 100",
+      "text": "%jdbc\nSELECT flightdate, \n    originairportid, \n    dot_id_reporting_airline \nFROM flights_as_parquet LIMIT 100;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:00:25+0000",
+      "dateUpdated": "2021-02-04T23:12:44+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2101,11 +2493,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -2126,16 +2518,16 @@
       "jobName": "paragraph_1612289550218_-1354161608",
       "id": "paragraph_1612289550218_-1354161608",
       "dateCreated": "2021-02-02T18:12:30+0000",
-      "dateStarted": "2021-02-02T18:50:45+0000",
-      "dateFinished": "2021-02-02T18:50:45+0000",
+      "dateStarted": "2021-02-04T23:12:24+0000",
+      "dateFinished": "2021-02-04T23:12:24+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:307"
+      "$$hashKey": "object:209243"
     },
     {
       "title": "Write some SQL to get Warmed Up",
-      "text": "%sql\nSELECT flights_as_parquet.flightDate, \n    ORIGIN.Description as AirportOrigin, \n    DEST.Description as AirportDest,\n    REF_AIRLINE.Description as Airline \nFROM flights_as_parquet, REF_AIRPORT as ORIGIN, REF_AIRPORT as DEST, REF_AIRLINE \n    where flights_as_parquet.OriginAirportID = ORIGIN.code \n    and  flights_as_parquet.DestAirportID = DEST.code\n    and flights_as_parquet.dot_id_Reporting_Airline = REF_AIRLINE.code\nLIMIT 100;",
+      "text": "%jdbc\nSELECT flights_as_parquet.flightDate, \n    ORIGIN.Description as AirportOrigin, \n    DEST.Description as AirportDest,\n    REF_AIRLINE.Description as Airline \nFROM flights_as_parquet, REF_AIRPORT as ORIGIN, REF_AIRPORT as DEST, REF_AIRLINE \n    where flights_as_parquet.OriginAirportID = ORIGIN.code \n    and  flights_as_parquet.DestAirportID = DEST.code\n    and flights_as_parquet.dot_id_Reporting_Airline = REF_AIRLINE.code\nLIMIT 100;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:00:22+0000",
+      "dateUpdated": "2021-02-04T23:12:55+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2173,11 +2565,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2199,16 +2591,16 @@
       "jobName": "paragraph_1612289698114_-425747051",
       "id": "paragraph_1612289698114_-425747051",
       "dateCreated": "2021-02-02T18:14:58+0000",
-      "dateStarted": "2021-02-02T18:50:49+0000",
-      "dateFinished": "2021-02-02T18:51:08+0000",
+      "dateStarted": "2021-02-04T23:12:55+0000",
+      "dateFinished": "2021-02-04T23:13:15+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:308"
+      "$$hashKey": "object:209244"
     },
     {
       "title": "Warmup : Total Flights Monthly Variation ",
-      "text": "%sql\nSELECT Month, count(*) FROM flights_as_parquet group by Month Order by Month;",
+      "text": "%jdbc\nSELECT Month, count(*) FROM flights_as_parquet GROUP BY Month Order by Month;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T18:57:52+0000",
+      "dateUpdated": "2021-02-04T23:14:01+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2278,11 +2670,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2304,16 +2696,16 @@
       "jobName": "paragraph_1612289796663_665734990",
       "id": "paragraph_1612289796663_665734990",
       "dateCreated": "2021-02-02T18:16:36+0000",
-      "dateStarted": "2021-02-02T18:54:22+0000",
-      "dateFinished": "2021-02-02T18:54:42+0000",
+      "dateStarted": "2021-02-04T23:13:35+0000",
+      "dateFinished": "2021-02-04T23:13:56+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:309"
+      "$$hashKey": "object:209245"
     },
     {
       "title": "Which cities are mosty Flyed From (Origin)",
-      "text": "%sql\nSELECT OriginCityName, count(*) as count FROM flights_as_parquet group by OriginCityName Order by count desc limit 50;",
+      "text": "%jdbc\nSELECT OriginCityName, count(*) AS count \nFROM flights_as_parquet \nGROUP BY OriginCityName ORDER BY count DESC LIMIT 50;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T21:47:40+0000",
+      "dateUpdated": "2021-02-04T23:15:57+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2371,11 +2763,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2397,16 +2789,16 @@
       "jobName": "paragraph_1612289880702_-2091406772",
       "id": "paragraph_1612289880702_-2091406772",
       "dateCreated": "2021-02-02T18:18:00+0000",
-      "dateStarted": "2021-02-02T18:58:15+0000",
-      "dateFinished": "2021-02-02T18:58:31+0000",
+      "dateStarted": "2021-02-04T23:14:39+0000",
+      "dateFinished": "2021-02-04T23:15:01+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:310"
+      "$$hashKey": "object:209246"
     },
     {
       "title": "Which cities are mosty Flyed To (Destination)",
-      "text": "%sql\nSELECT DestCityName, count(*) as count FROM flights_as_parquet group by DestCityName Order by count desc limit 50;",
+      "text": "%jdbc\nSELECT DestCityName, count(*) AS count \nFROM flights_as_parquet \nGROUP BY DestCityName ORDER BY count DESC LIMIT 50;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T21:47:48+0000",
+      "dateUpdated": "2021-02-04T23:15:52+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2464,11 +2856,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2490,16 +2882,16 @@
       "jobName": "paragraph_1612292553957_642369076",
       "id": "paragraph_1612292553957_642369076",
       "dateCreated": "2021-02-02T19:02:33+0000",
-      "dateStarted": "2021-02-02T19:03:37+0000",
-      "dateFinished": "2021-02-02T19:03:58+0000",
+      "dateStarted": "2021-02-04T23:15:16+0000",
+      "dateFinished": "2021-02-04T23:15:38+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:311"
+      "$$hashKey": "object:209247"
     },
     {
       "title": "Let's Look at the most Active Airlines",
-      "text": "%sql\nSELECT flights_as_parquet.Reporting_Airline,count(*) AS count \nFROM flights_as_parquet\nGROUP BY flights_as_parquet.Reporting_Airline ORDER BY count DESC LIMIT 50;",
+      "text": "%jdbc\nSELECT flights_as_parquet.Reporting_Airline,count(*) AS count \nFROM flights_as_parquet\nGROUP BY flights_as_parquet.Reporting_Airline ORDER BY count DESC LIMIT 50;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:05:31+0000",
+      "dateUpdated": "2021-02-04T23:15:59+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2557,11 +2949,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2583,14 +2975,14 @@
       "jobName": "paragraph_1612292617663_353145380",
       "id": "paragraph_1612292617663_353145380",
       "dateCreated": "2021-02-02T19:03:37+0000",
-      "dateStarted": "2021-02-02T19:04:49+0000",
-      "dateFinished": "2021-02-02T19:05:10+0000",
+      "dateStarted": "2021-02-04T23:15:59+0000",
+      "dateFinished": "2021-02-04T23:16:19+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:312"
+      "$$hashKey": "object:209248"
     },
     {
       "title": "We need Airline Names... Is this ref table ok ?",
-      "text": "%sql\nDESCRIBE ref_airline;",
+      "text": "%jdbc\nDESCRIBE ref_airline;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:08:21+0000",
       "config": {
@@ -2629,11 +3021,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2658,11 +3050,11 @@
       "dateStarted": "2021-02-02T19:07:48+0000",
       "dateFinished": "2021-02-02T19:07:49+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:313"
+      "$$hashKey": "object:209249"
     },
     {
       "title": "Not Really Actually...",
-      "text": "%sql\nSELECT * FROM ref_airline LIMIT 100;",
+      "text": "%jdbc\nSELECT * FROM ref_airline LIMIT 100;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:08:42+0000",
       "config": {
@@ -2700,11 +3092,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2729,11 +3121,11 @@
       "dateStarted": "2021-02-02T19:08:38+0000",
       "dateFinished": "2021-02-02T19:08:38+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:314"
+      "$$hashKey": "object:209250"
     },
     {
       "title": "This One looks much better : Let's load it",
-      "text": "%sql\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_carrier (Code STRING, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_carrier'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
+      "text": "%jdbc\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_carrier (Code STRING, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_carrier'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:11:06+0000",
       "config": {
@@ -2742,11 +3134,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2771,10 +3163,10 @@
       "dateStarted": "2021-02-02T19:11:06+0000",
       "dateFinished": "2021-02-02T19:11:06+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:315"
+      "$$hashKey": "object:209251"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/ref/UNIQUE_CARRIERS.csv' OVERWRITE INTO TABLE ref_carrier;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/ref/UNIQUE_CARRIERS.csv' OVERWRITE INTO TABLE ref_carrier;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:18:11+0000",
       "config": {
@@ -2783,11 +3175,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -2811,12 +3203,12 @@
       "dateStarted": "2021-02-02T19:18:11+0000",
       "dateFinished": "2021-02-02T19:18:12+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:316"
+      "$$hashKey": "object:209252"
     },
     {
-      "text": "%sql\nSELECT * FROM ref_carrier LIMIT 100;",
+      "text": "%jdbc\nSELECT * FROM ref_carrier LIMIT 100;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:18:15+0000",
+      "dateUpdated": "2021-02-04T23:16:42+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2852,11 +3244,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -2877,16 +3269,16 @@
       "jobName": "paragraph_1612293117163_-1729615190",
       "id": "paragraph_1612293117163_-1729615190",
       "dateCreated": "2021-02-02T19:11:57+0000",
-      "dateStarted": "2021-02-02T19:18:15+0000",
-      "dateFinished": "2021-02-02T19:18:15+0000",
+      "dateStarted": "2021-02-04T23:16:42+0000",
+      "dateFinished": "2021-02-04T23:16:42+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:317"
+      "$$hashKey": "object:209253"
     },
     {
       "title": "Let's Display a Nice pie Chart of the most Active Airlines",
-      "text": "%sql\nSELECT ref_carrier.Description, QUERY.count\nFROM (SELECT flights_as_parquet.Reporting_Airline,count(*) as count\nFROM flights_as_parquet\ngroup by  flights_as_parquet.Reporting_Airline Order by count desc) AS QUERY, ref_carrier\nwhere  QUERY.Reporting_Airline = ref_carrier.code \nOrder by count desc;",
+      "text": "%jdbc\nSELECT ref_carrier.Description, query.count\nFROM (\n    SELECT flights_as_parquet.Reporting_Airline, count(*) AS count\n        FROM flights_as_parquet\n        GROUP BY  flights_as_parquet.Reporting_Airline ORDER BY count DESC) AS query, \n    ref_carrier\nWHERE  query.Reporting_Airline = ref_carrier.code \nORDER BY count DESC;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:15:23+0000",
+      "dateUpdated": "2021-02-04T23:18:56+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -2923,11 +3315,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2949,14 +3341,14 @@
       "jobName": "paragraph_1612293129229_-599220184",
       "id": "paragraph_1612293129229_-599220184",
       "dateCreated": "2021-02-02T19:12:09+0000",
-      "dateStarted": "2021-02-02T19:13:19+0000",
-      "dateFinished": "2021-02-02T19:13:38+0000",
+      "dateStarted": "2021-02-04T23:18:56+0000",
+      "dateFinished": "2021-02-04T23:19:18+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:318"
+      "$$hashKey": "object:209254"
     },
     {
       "title": "What about Cancellations ?",
-      "text": "%sql\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_cancellation (Code STRING, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_cancellation'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
+      "text": "%jdbc\nCREATE EXTERNAL TABLE IF NOT EXISTS ref_cancellation (Code STRING, Description STRING)\nROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nWITH SERDEPROPERTIES \n(\n    \"separatorChar\" = \",\",\n    \"quoteChar\"     = \"\\\"\"\n) \nLOCATION '/user/hive/data/ref_cancellation'\nTBLPROPERTIES(\"skip.header.line.count\"=\"1\")",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:16:59+0000",
       "config": {
@@ -2965,11 +3357,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -2994,10 +3386,10 @@
       "dateStarted": "2021-02-02T19:16:59+0000",
       "dateFinished": "2021-02-02T19:17:00+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:319"
+      "$$hashKey": "object:209255"
     },
     {
-      "text": "%sql\nLOAD DATA INPATH '/user/root/transtat/ref/CANCELLATION.csv' OVERWRITE INTO TABLE ref_cancellation;",
+      "text": "%jdbc\nLOAD DATA INPATH '/user/root/transtat/ref/CANCELLATION.csv' OVERWRITE INTO TABLE ref_cancellation;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:18:56+0000",
       "config": {
@@ -3006,11 +3398,11 @@
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -3034,10 +3426,10 @@
       "dateStarted": "2021-02-02T19:18:56+0000",
       "dateFinished": "2021-02-02T19:18:56+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:320"
+      "$$hashKey": "object:209256"
     },
     {
-      "text": "%sql\nSELECT * FROM ref_cancellation;",
+      "text": "%jdbc\nSELECT * FROM ref_cancellation;",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T19:19:18+0000",
       "config": {
@@ -3075,11 +3467,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -3103,12 +3495,12 @@
       "dateStarted": "2021-02-02T19:18:59+0000",
       "dateFinished": "2021-02-02T19:18:59+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:321"
+      "$$hashKey": "object:209257"
     },
     {
-      "text": "%sql\nSELECT CancellationCode, count(*) from flights_as_parquet where Cancelled = 1 group by CancellationCode order by CancellationCode",
+      "text": "%jdbc\nSELECT CancellationCode, count(*) FROM flights_as_parquet WHERE Cancelled = 1 GROUP BY CancellationCode ORDER BY CancellationCode;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:20:10+0000",
+      "dateUpdated": "2021-02-04T23:20:00+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3144,11 +3536,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -3169,16 +3561,16 @@
       "jobName": "paragraph_1612293447159_-917845434",
       "id": "paragraph_1612293447159_-917845434",
       "dateCreated": "2021-02-02T19:17:27+0000",
-      "dateStarted": "2021-02-02T19:19:50+0000",
-      "dateFinished": "2021-02-02T19:20:08+0000",
+      "dateStarted": "2021-02-04T23:20:00+0000",
+      "dateFinished": "2021-02-04T23:20:23+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:322"
+      "$$hashKey": "object:209258"
     },
     {
       "title": "That would be better with labels. Let's perform a join :",
-      "text": "%sql\nSELECT ref_cancellation.Description, count(*) \nFROM flights_as_parquet JOIN ref_cancellation \nON flights_as_parquet.CancellationCode = ref_cancellation.code \nWHERE flights_as_parquet.Cancelled = 1 \nGROUP BY ref_cancellation.Description \nORDER BY ref_cancellation.Description;",
+      "text": "%jdbc\nSELECT ref_cancellation.Description, count(*) \nFROM flights_as_parquet JOIN ref_cancellation \nON flights_as_parquet.CancellationCode = ref_cancellation.code \nWHERE flights_as_parquet.Cancelled = 1 \nGROUP BY ref_cancellation.Description \nORDER BY ref_cancellation.Description;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:26:52+0000",
+      "dateUpdated": "2021-02-04T23:20:38+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3215,11 +3607,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -3241,16 +3633,16 @@
       "jobName": "paragraph_1612293590625_-1380692617",
       "id": "paragraph_1612293590625_-1380692617",
       "dateCreated": "2021-02-02T19:19:50+0000",
-      "dateStarted": "2021-02-02T19:26:18+0000",
-      "dateFinished": "2021-02-02T19:26:36+0000",
+      "dateStarted": "2021-02-04T23:20:38+0000",
+      "dateFinished": "2021-02-04T23:21:00+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:323"
+      "$$hashKey": "object:209259"
     },
     {
       "title": "Which Months induce more Cancellation due to Weather ?",
-      "text": "%sql\nSELECT Month, count(*) FROM flights_as_parquet WHERE CancellationCode = 'B' GROUP BY Month ORDER BY Month;",
+      "text": "%jdbc\nSELECT Month, count(*) FROM flights_as_parquet WHERE CancellationCode = 'B' GROUP BY Month ORDER BY Month;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T19:28:29+0000",
+      "dateUpdated": "2021-02-04T23:21:05+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3308,11 +3700,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -3334,16 +3726,16 @@
       "jobName": "paragraph_1612293637710_-984994077",
       "id": "paragraph_1612293637710_-984994077",
       "dateCreated": "2021-02-02T19:20:37+0000",
-      "dateStarted": "2021-02-02T19:28:04+0000",
-      "dateFinished": "2021-02-02T19:28:25+0000",
+      "dateStarted": "2021-02-04T23:21:05+0000",
+      "dateFinished": "2021-02-04T23:21:25+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:324"
+      "$$hashKey": "object:209260"
     },
     {
       "title": "Which carriers have the most cancellations ?",
-      "text": "%sql\nSELECT ref_carrier.Description, QUERY.count\nFROM (SELECT  Reporting_Airline,count(*) as count\nFROM flights_as_parquet\nWHERE Cancelled=1\nGROUP BY flights_as_parquet.Reporting_Airline Order by count desc) AS QUERY, ref_carrier\nWHERE  QUERY.Reporting_Airline = ref_carrier.code \nORDER BY count DESC;",
+      "text": "%jdbc\nSELECT ref_carrier.Description, QUERY.count\nFROM (SELECT  Reporting_Airline,count(*) as count\nFROM flights_as_parquet\nWHERE Cancelled=1\nGROUP BY flights_as_parquet.Reporting_Airline Order by count desc) AS QUERY, ref_carrier\nWHERE  QUERY.Reporting_Airline = ref_carrier.code \nORDER BY count DESC;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T20:02:00+0000",
+      "dateUpdated": "2021-02-04T23:21:36+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3401,11 +3793,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -3427,14 +3819,14 @@
       "jobName": "paragraph_1612294084367_-795460144",
       "id": "paragraph_1612294084367_-795460144",
       "dateCreated": "2021-02-02T19:28:04+0000",
-      "dateStarted": "2021-02-02T20:00:52+0000",
-      "dateFinished": "2021-02-02T20:01:16+0000",
+      "dateStarted": "2021-02-04T23:21:36+0000",
+      "dateFinished": "2021-02-04T23:21:57+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:325"
+      "$$hashKey": "object:209261"
     },
     {
       "title": "Let's group by Total Flight Count per Carrier",
-      "text": "%sql\nCREATE TABLE CARRIERS_FLIGHT_COUNT AS (SELECT ref_carrier.Code, ref_carrier.Description, QUERY.count \nFROM \n    (SELECT flights_as_parquet.Reporting_Airline, count(*) AS count FROM flights_as_parquet GROUP BY flights_as_parquet.Reporting_Airline ORDER BY count DESC) AS QUERY, \n    ref_carrier \nWHERE QUERY.Reporting_Airline = ref_carrier.code \nORDER BY count DESC);",
+      "text": "%jdbc\nCREATE TABLE CARRIERS_FLIGHT_COUNT AS (SELECT ref_carrier.Code, ref_carrier.Description, QUERY.count \nFROM \n    (SELECT flights_as_parquet.Reporting_Airline, count(*) AS count FROM flights_as_parquet GROUP BY flights_as_parquet.Reporting_Airline ORDER BY count DESC) AS QUERY, \n    ref_carrier \nWHERE QUERY.Reporting_Airline = ref_carrier.code \nORDER BY count DESC);",
       "user": "anonymous",
       "dateUpdated": "2021-02-02T20:03:06+0000",
       "config": {
@@ -3473,11 +3865,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -3502,12 +3894,12 @@
       "dateStarted": "2021-02-02T20:03:06+0000",
       "dateFinished": "2021-02-02T20:03:23+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:326"
+      "$$hashKey": "object:209262"
     },
     {
-      "text": "%sql\nSELECT * FROM CARRIERS_FLIGHT_COUNT;",
+      "text": "%jdbc\nSELECT * FROM CARRIERS_FLIGHT_COUNT;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T20:03:34+0000",
+      "dateUpdated": "2021-02-04T23:22:11+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3544,11 +3936,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -3569,16 +3961,16 @@
       "jobName": "paragraph_1612295989982_60164321",
       "id": "paragraph_1612295989982_60164321",
       "dateCreated": "2021-02-02T19:59:49+0000",
-      "dateStarted": "2021-02-02T20:03:33+0000",
-      "dateFinished": "2021-02-02T20:03:33+0000",
+      "dateStarted": "2021-02-04T23:22:11+0000",
+      "dateFinished": "2021-02-04T23:22:11+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:327"
+      "$$hashKey": "object:209263"
     },
     {
       "title": "Let's group by Cancellation Count per Carrier",
-      "text": "%sql\nCREATE TABLE CARRIERS_CANCELLED_COUNT AS (SELECT ref_carrier.Code, ref_carrier.Description, QUERY.count \nFROM \n    (SELECT Reporting_Airline, count(*) AS count FROM flights_as_parquet WHERE Cancelled=1 GROUP BY flights_as_parquet.Reporting_Airline ORDER BY count DESC) AS QUERY, \n    ref_carrier \nWHERE QUERY.Reporting_Airline = ref_carrier.code \nORDER BY count DESC);",
+      "text": "%jdbc\nCREATE TABLE CARRIERS_CANCELLED_COUNT AS (SELECT ref_carrier.Code, ref_carrier.Description, QUERY.count \nFROM \n    (SELECT Reporting_Airline, count(*) AS count FROM flights_as_parquet WHERE Cancelled=1 GROUP BY flights_as_parquet.Reporting_Airline ORDER BY count DESC) AS QUERY, \n    ref_carrier \nWHERE QUERY.Reporting_Airline = ref_carrier.code \nORDER BY count DESC);",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T20:04:01+0000",
+      "dateUpdated": "2021-02-04T23:22:27+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3615,11 +4007,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -3627,11 +4019,11 @@
         "forms": {}
       },
       "results": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "msg": [
           {
             "type": "TEXT",
-            "data": "Query executed successfully. Affected rows : -1"
+            "data": "org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException org.apache.hadoop.hive.ql.parse.SemanticException: Table already exists: default.CARRIERS_CANCELLED_COUNT\n\tat org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:300)\n\tat org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:286)\n\tat org.apache.hive.jdbc.HiveStatement.runAsyncOnServer(HiveStatement.java:324)\n\tat org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:265)\n\tat org.apache.commons.dbcp2.DelegatingStatement.execute(DelegatingStatement.java:291)\n\tat org.apache.commons.dbcp2.DelegatingStatement.execute(DelegatingStatement.java:291)\n\tat org.apache.zeppelin.jdbc.JDBCInterpreter.executeSql(JDBCInterpreter.java:715)\n\tat org.apache.zeppelin.jdbc.JDBCInterpreter.internalInterpret(JDBCInterpreter.java:810)\n\tat org.apache.zeppelin.interpreter.AbstractInterpreter.interpret(AbstractInterpreter.java:47)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:110)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:684)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:577)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:172)\n\tat org.apache.zeppelin.scheduler.AbstractScheduler.runJob(AbstractScheduler.java:130)\n\tat org.apache.zeppelin.scheduler.ParallelScheduler.lambda$runJobInScheduler$0(ParallelScheduler.java:39)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\nCaused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException org.apache.hadoop.hive.ql.parse.SemanticException: Table already exists: default.CARRIERS_CANCELLED_COUNT\n\tat org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:335)\n\tat org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:199)\n\tat org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:260)\n\tat org.apache.hive.service.cli.operation.Operation.run(Operation.java:247)\n\tat org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:541)\n\tat org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:527)\n\tat sun.reflect.GeneratedMethodAccessor27.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.apache.hive.service.cli.session.HiveSessionProxy.invoke(HiveSessionProxy.java:78)\n\tat org.apache.hive.service.cli.session.HiveSessionProxy.access$000(HiveSessionProxy.java:36)\n\tat org.apache.hive.service.cli.session.HiveSessionProxy$1.run(HiveSessionProxy.java:63)\n\tat java.security.AccessController.doPrivileged(Native Method)\n\tat javax.security.auth.Subject.doAs(Subject.java:422)\n\tat org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)\n\tat org.apache.hive.service.cli.session.HiveSessionProxy.invoke(HiveSessionProxy.java:59)\n\tat com.sun.proxy.$Proxy44.executeStatementAsync(Unknown Source)\n\tat org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:312)\n\tat org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:562)\n\tat org.apache.hive.service.rpc.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1557)\n\tat org.apache.hive.service.rpc.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1542)\n\tat org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)\n\tat org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)\n\tat org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)\n\tat org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)\n\t... 3 more\nCaused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:org.apache.hadoop.hive.ql.parse.SemanticException: Table already exists: default.CARRIERS_CANCELLED_COUNT\n\tat org.apache.hadoop.hive.ql.parse.SemanticAnalyzer.analyzeCreateTable(SemanticAnalyzer.java:13270)\n\tat org.apache.hadoop.hive.ql.parse.SemanticAnalyzer.genResolvedParseTree(SemanticAnalyzer.java:11991)\n\tat org.apache.hadoop.hive.ql.parse.SemanticAnalyzer.analyzeInternal(SemanticAnalyzer.java:12146)\n\tat org.apache.hadoop.hive.ql.parse.CalcitePlanner.analyzeInternal(CalcitePlanner.java:330)\n\tat org.apache.hadoop.hive.ql.parse.BaseSemanticAnalyzer.analyze(BaseSemanticAnalyzer.java:285)\n\tat org.apache.hadoop.hive.ql.Driver.compile(Driver.java:659)\n\tat org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1826)\n\tat org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1773)\n\tat org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1768)\n\tat org.apache.hadoop.hive.ql.reexec.ReExecDriver.compileAndRespond(ReExecDriver.java:126)\n\tat org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:197)\n\t... 26 more\nCaused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:Table already exists: default.CARRIERS_CANCELLED_COUNT\n\tat org.apache.hadoop.hive.ql.parse.SemanticAnalyzer.analyzeCreateTable(SemanticAnalyzer.java:13267)\n\t... 36 more\n"
           }
         ]
       },
@@ -3641,15 +4033,15 @@
       "jobName": "paragraph_1612294394198_-157893902",
       "id": "paragraph_1612294394198_-157893902",
       "dateCreated": "2021-02-02T19:33:14+0000",
-      "dateStarted": "2021-02-02T20:04:01+0000",
-      "dateFinished": "2021-02-02T20:04:17+0000",
-      "status": "FINISHED",
-      "$$hashKey": "object:328"
+      "dateStarted": "2021-02-04T23:22:27+0000",
+      "dateFinished": "2021-02-04T23:22:27+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:209264"
     },
     {
-      "text": "%sql\nselect * from CARRIERS_CANCELLED_COUNT;",
+      "text": "%jdbc\nselect * from CARRIERS_CANCELLED_COUNT;",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T20:08:52+0000",
+      "dateUpdated": "2021-02-04T23:22:39+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3734,11 +4126,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/text"
       },
       "settings": {
         "params": {},
@@ -3759,16 +4151,16 @@
       "jobName": "paragraph_1612296228384_-2039391313",
       "id": "paragraph_1612296228384_-2039391313",
       "dateCreated": "2021-02-02T20:03:48+0000",
-      "dateStarted": "2021-02-02T20:04:50+0000",
-      "dateFinished": "2021-02-02T20:04:50+0000",
+      "dateStarted": "2021-02-04T23:22:39+0000",
+      "dateFinished": "2021-02-04T23:22:39+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:329"
+      "$$hashKey": "object:209265"
     },
     {
       "title": "Let's join Cancellations and Total Flights per Carrier",
-      "text": "%sql\nSELECT CARRIERS_FLIGHT_COUNT.count AS fCount, CARRIERS_FLIGHT_COUNT.code, CARRIERS_FLIGHT_COUNT.description, CARRIERS_CANCELLED_COUNT.count cCount, (CARRIERS_CANCELLED_COUNT.count / CARRIERS_FLIGHT_COUNT.count) AS ratio \nFROM CARRIERS_FLIGHT_COUNT JOIN CARRIERS_CANCELLED_COUNT ON CARRIERS_FLIGHT_COUNT.code = CARRIERS_CANCELLED_COUNT.code\nORDER BY ratio DESC;\n",
+      "text": "%jdbc\nSELECT CARRIERS_FLIGHT_COUNT.count AS fCount, CARRIERS_FLIGHT_COUNT.code, CARRIERS_FLIGHT_COUNT.description, CARRIERS_CANCELLED_COUNT.count cCount, (CARRIERS_CANCELLED_COUNT.count / CARRIERS_FLIGHT_COUNT.count) AS ratio \nFROM CARRIERS_FLIGHT_COUNT JOIN CARRIERS_CANCELLED_COUNT \nON CARRIERS_FLIGHT_COUNT.code = CARRIERS_CANCELLED_COUNT.code\nORDER BY ratio DESC;\n",
       "user": "anonymous",
-      "dateUpdated": "2021-02-02T20:12:38+0000",
+      "dateUpdated": "2021-02-04T23:23:01+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -3897,11 +4289,11 @@
           }
         },
         "editorSetting": {
-          "language": "sql",
+          "language": "text",
           "editOnDblClick": false,
           "completionSupport": true
         },
-        "editorMode": "ace/mode/sql",
+        "editorMode": "ace/mode/text",
         "title": true
       },
       "settings": {
@@ -3923,38 +4315,10 @@
       "jobName": "paragraph_1612294612476_-266638993",
       "id": "paragraph_1612294612476_-266638993",
       "dateCreated": "2021-02-02T19:36:52+0000",
-      "dateStarted": "2021-02-02T20:11:36+0000",
-      "dateFinished": "2021-02-02T20:11:52+0000",
+      "dateStarted": "2021-02-04T23:23:01+0000",
+      "dateFinished": "2021-02-04T23:23:14+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:330"
-    },
-    {
-      "text": "%sql\n",
-      "user": "anonymous",
-      "dateUpdated": "2021-02-02T20:07:15+0000",
-      "config": {
-        "colWidth": 12,
-        "fontSize": 9,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "text",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/text"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1612296435535_-12537022",
-      "id": "paragraph_1612296435535_-12537022",
-      "dateCreated": "2021-02-02T20:07:15+0000",
-      "status": "READY",
-      "$$hashKey": "object:331"
+      "$$hashKey": "object:209266"
     }
   ],
   "name": "TP HIVE",
