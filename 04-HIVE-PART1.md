@@ -86,7 +86,7 @@ CREATE TABLE mon_user_table_xxx  (customerID INT,firstName STRING,xxxxxxx STRING
 
 Charger le fichier csv directement dans Hive depuis la ligne de commande (commande load) dans votre table créée précédemment.
 ```console
-LOAD DATA LOCAL INPATH ’/chemin/monfichier-a-inserer.csv' OVERWRITE INTO TABLE mon_user_ma_table_xxx;
+LOAD DATA LOCAL INPATH '/chemin/monfichier-a-inserer.csv' OVERWRITE INTO TABLE mon_user_ma_table_xxx;
 ```
 
 :warning: **ATTENTION !!! FAITES D'ABORD UNE SAUVEGARDE DE VOTRE FICHIER csv AVANT DE LANCER CETTE COMMANDE  
