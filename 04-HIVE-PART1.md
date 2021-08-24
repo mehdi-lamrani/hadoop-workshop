@@ -14,6 +14,8 @@ Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/hadoop/).
     * Ouvrir le fichier : head votrefichier.csv
     * Noter le schéma
 
+    * ATTENTION : Renommer la colonne wage-plan en wave_plan (utiliser vi ou nedit)
+    
 * Lancer le shell Hive : hive
 
 #### :information_source: Hints :
