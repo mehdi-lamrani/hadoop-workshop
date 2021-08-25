@@ -51,6 +51,17 @@ Configuration :
 
 Puis : SAVE 
 
+###    STEP 4
+
+Ouvrir la note "TEST" et écrire dans une cellule : 
+
+%jdbc
+show databases;
+
+Executez la cellule avec l'icône flèche ">" tout à droite de la cellule
+
+la Database "default" devrais s'afficher avec succès.
+
 
 ###  LOAD ZEPPELIN NOTEBOOK : 
 
