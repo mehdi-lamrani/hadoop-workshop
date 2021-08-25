@@ -55,8 +55,10 @@ Puis : SAVE
 
 Ouvrir la note "TEST" et écrire dans une cellule : 
 
-%jdbc<br>
-show databases;<br>
+```
+%jdbc
+show databases;
+```
 
 Executez la cellule avec l'icône flèche ">" tout à droite de la cellule
 
