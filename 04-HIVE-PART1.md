@@ -32,20 +32,11 @@ $ cd /usr/bin
 $ hive
 ```
 
-* Afficher les bases :
-```console
-show databases;
-```
+* Afficher les bases
 
 * Créer une database mon_prenom_db
 
-```
-hive> CREATE DATABASE mon_prenom_db;
-```
-
-```console
-show databases;
-```
+* Vérifier qu'elle a bien été créée
 
 * Rentrer dans cette database (Utiliser la commande use)
 ```console
@@ -73,7 +64,7 @@ CREATE TABLE mon_user_table_xxx (
 ;
 
 # SUR LA MEME LIGNE (cf ci-dessous)
-CREATE TABLE mon_user_table_xxx  (customerID INT,firstName STRING,xxxxxxx STRING, xxxxx TIMESTAMP) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+CREATE TABLE mon_user_table_xxx  (customerID INT, firstName STRING, xxxxxxx STRING, xxxxx TIMESTAMP) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 ```
 
 :warning: SKIP HEADER : tblproperties("skip.header.line.count"="1");
@@ -84,13 +75,10 @@ CREATE TABLE mon_user_table_xxx  (customerID INT,firstName STRING,xxxxxxx STRING
 
 * DANS LA CLI HIVE :
 
-Charger le fichier csv directement dans Hive depuis la ligne de commande (commande load) dans votre table créée précédemment.
-```console
-LOAD DATA LOCAL INPATH '/chemin/monfichier-a-inserer.csv' OVERWRITE INTO TABLE mon_user_ma_table_xxx;
-```
+Charger le fichier csv directement dans Hive depuis la ligne de commande (commande load) dans votre table créée précédemment.<br/>
+Penser a la commande LOAD.
 
-:warning: **ATTENTION !!! FAITES D'ABORD UNE SAUVEGARDE DE VOTRE FICHIER csv AVANT DE LANCER CETTE COMMANDE  
-CAR CETTE COMMANDE VA SUPPRIMER LE FICHIER CSV APRES IMPORT !!!!!**
+:warning: **ATTENTION !!! FAITES D'ABORD UNE SAUVEGARDE DE VOTRE FICHIER csv AVANT DE LANCER LA COMMANDE CAR CETTE COMMANDE VA SUPPRIMER LE FICHIER CSV APRES IMPORT !!!!!**
 
 DANS LA CLI LINUX : 
 ```console
@@ -108,11 +96,8 @@ cp /chemin/monfichier-original.csv /chemin/monfichier-a-inserer.csv
 :warning: Ne pas oublier de faire une copie !!
 
 * Rejouer la commande précédente, cette fois sans le “local”.
-```console
-LOAD DATA INPATH ’/chemin/sur/hdfs/monfichier-a-inserer.csv' OVERWRITE INTO TABLE mon_user_ma_table_xxx;
-```
 
-* Une erreur de format est levée. Explication.
+* Une erreur de format est levée.
 Error: The file that you are trying to load does not match the file format of the destination table.
 
 ##### Formatage de la requête 
@@ -129,7 +114,7 @@ CREATE TABLE mon_user_table_xxx (
 STORED AS TEXTFILE; //OBLIGATOIRE SI FICHIER ENTREE = CSV
 ```
 
-Eventuellement rajouter cette ligne également à la fin de votre requête:
+Eventuellement rajouter cette ligne également à la fin de votre requête :
 tblproperties("skip.header.line.count"="1");
 
 * Afficher les données insérées :        
