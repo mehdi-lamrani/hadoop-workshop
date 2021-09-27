@@ -10,10 +10,8 @@
 * Creating external table Example - Create table on weather data :
   
 ```sql
-  CREATE EXTERNAL TABLE weather (temperature INT, date STRING)
-  ROW FORMAT DELIMITED
-  FIELDS TERMINATED BY ','
-  LOCATION '/hive/data/weather';
+  CREATE EXTERNAL TABLE weather (
+  	...
 ```
 <br/>
 
@@ -24,7 +22,7 @@
 Load the data from HDFS to Hive using the following command:
 
 ```console
-  LOAD DATA INPATH ‘hdfs:/data/2012.txt’ INTO TABLE weather;
+# Utiliser la commande LOAD.
 ```
 <br/>
 
@@ -34,24 +32,18 @@ Load the data from HDFS to Hive using the following command:
 
 * For example in the above weather table the data can be partitioned on the basis of year and month and when query is fired on weather table this partition can be used as one of the column.
 
-**EXAMPLE :**
-
 ```sql
-  CREATE EXTERNAL TABLE IF NOT EXISTS weather (temperature INT, date STRING)
-    PARTITIONED BY (year INT, month STRING)
-    ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ','
-    LOCATION '/hive/data/weather';
+  CREATE EXTERNAL TABLE IF NOT EXISTS weather (
+  	...
 ```
 
 * Loading data in partitioned tables is different than non-partitioned one. 
 
 * There is little manual work of mentioning the partition data. 
 
-* Data can be loaded in partition, year 2012 and month 01 and 02 as follows:
+* Data can be loaded in partition, year 2012 and month 01 and 02.
 ```console
-LOAD DATA INPATH ‘hdfs:/data/2012.txt’ INTO TABLE weather PARTITION (year=2012, month=’01’);
-LOAD DATA INPATH ‘hdfs:/data/2012.txt’ INTO TABLE weather PARTITION (year=2012, month=’02’);
+# Utiliser la commande LOAD
 ```
 
 * This creates the partitioned table and makes different folder for each partition which helps in querying data.
