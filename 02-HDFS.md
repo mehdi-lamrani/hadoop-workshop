@@ -14,7 +14,7 @@ https://www.formation-bigdata.com/les-commandes-hdfs/
 1 - Télécharger le fichier suivant dans le Système linux via la commande WGET :<br/>
 https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
 ```console
-# Commande Wget
+# Commande wget
 ```
 
 2 - Créer un répertoire sous HDFS.
