@@ -5,39 +5,33 @@
 **BUT DU TP**
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
 
-### ⚠⚠⚠ NE COPIEZ PAS LES COMMANDES SANS REFLECHIR ⚠⚠⚠
-C'est la meilleure façon de faire des erreurs de copier-coller :)
-<br/>
-
 ---
 - #### Enoncé 1 : MANIPULATION Part I
 
 :information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
 
-1 - Télécharger le fichier suivant dans le Système linux via la commande WGET 
+1 - Télécharger le fichier suivant dans le Système linux via la commande WGET :<br/>
+https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
 ```console
-wget https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
+# Commande Wget
 ```
 
 2 - Créer un répertoire sous HDFS.
 
-:warning: Spoiler : 
 ```console
-$ hdfs dfs -mkdir /user/mon_prenom
+# Dans le dossier /user/mon_prenom
 ```
 
 3 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user.
 
-:warning: Spoiler : 
 ```console
-$ hdfs dfs -put airports.dat /user/mon_prenom
+# Toujours dans le dossier /user/mon_prenom
 ```
 
 4 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs).
 
-:warning: Spoiler : 
 ```console
-$ hdfs dfs -ls /user/mon_prenom
+# Voir la doc des commandes HDFS
 ```
 
 ---
@@ -45,26 +39,11 @@ $ hdfs dfs -ls /user/mon_prenom
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
 
-:warning: Spoiler : 
-```console
-$ hdfs dfs -mkdir /user/mon_prenom/data
-```
-
 2 - Déplacer le fichier airports.dat depuis hdfs dans ce répertoire data.
-
-:warning: Spoiler : 
-```console
-$ hdfs dfs -mv /user/mon_prenom/airports.dat /user/mon_prenom/data
-```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
 
-:warning: Spoiler :
-```console
-$ hdfs dfs -chmod 700 /user/mon_prenom/data/airports.dat
-```
-
-:information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
+:information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod / etc.
 
 
 ---
@@ -87,5 +66,3 @@ $ hdfs fsck /user/mon_prenom/data/airports.dat -files -blocks -locations
 :information_source: Ressource Utile :   
 <!--https://hortonworks.com/blog/hdfs-metadata-directories-explained/--!>
 https://www.waitingforcode.com/hdfs/hdfs-on-disk-explained/read
-
-
