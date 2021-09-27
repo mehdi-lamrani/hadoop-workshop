@@ -55,16 +55,7 @@ Optionnel : (non nécessaire)
 EXEMPLE :
 ```sql
 CREATE TABLE mon_user_table_xxx (
-   customerID INT,
-   firstName STRING,
-   xxxxxx STRING,
-   xxxxxxx TIMESTAMP
-  ) ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ','
-;
-
-# SUR LA MEME LIGNE (cf ci-dessous)
-CREATE TABLE mon_user_table_xxx  (customerID INT, firstName STRING, xxxxxxx STRING, xxxxx TIMESTAMP) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+   ...
 ```
 
 :warning: SKIP HEADER : tblproperties("skip.header.line.count"="1");
@@ -104,14 +95,7 @@ Error: The file that you are trying to load does not match the file format of th
 
 ```sql
 CREATE TABLE mon_user_table_xxx (
-   customerID INT,
-   firstName STRING,
-   xxxxxx STRING,
-   xxxxxxx TIMESTAMP
-) 
-   ROW FORMAT DELIMITED
-   FIELDS TERMINATED BY ','
-STORED AS TEXTFILE; //OBLIGATOIRE SI FICHIER ENTREE = CSV
+   ...
 ```
 
 Eventuellement rajouter cette ligne également à la fin de votre requête :
