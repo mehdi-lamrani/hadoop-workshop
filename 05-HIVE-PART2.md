@@ -76,76 +76,77 @@ https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
 
 - Ajouter une colonne : 
 ```
-hive> ALTER TABLE employee ADD COLUMNS (dept STRING);
+hive> ...
 ```
 
 - Faire un Substring (Pour isoler le code pays dans l'ID de station)
-
 ```
 syntaxe : 
 substr(<input string/column>, int start, int length)
-
-exemple
-select substr(id, 1, 2) as country
+```
+```
+hive> ...
 ```
 
 - Splitter une colonne : 
-
 ```
-create table test (
-key string, 
-value string )
-STORED AS ORC ;
+create table test(
+	key string, 
+	value string)
+STORED AS ORC;
 
 INSERT INTO test (key, value )
 VALUES (22, '1001 abc, 1002 pqr, 1003 tuv'),
 (33, '1004 def, 1005 xyz');
+```
 
+Comment obtenir le résultat suivant ? <br/>
 
+```
+hive > ...
+```
 
-select key, split(items, ',') as valArray
-	from test
-
-result 
-
-+------+---------------------------------------+--+
+result : <br/>
+```
++------+---------------------------------------+
 | key  |                  _c1                  |
-+------+---------------------------------------+--+
++------+---------------------------------------+
 | 22   | ["1001 abc"," 1002 pqr"," 1003 tuv"]  |
 | 33   | ["1004 def"," 1005 xyz"]              |
-+------+---------------------------------------+--+
++------+---------------------------------------+
+```
+Comment obtenir le résultat suivant ? <br/>
 
-select key, trim(uniqueVal)
-from(
- select key, split(items, ',') as valArray
- from test ) a lateral view explode(a.valArray) exploded as uniqueVal ;
-
-+------+-----------+--+
+```
+hive > ...
+```
+```
++------+-----------+
 | key  |    _c1    |
-+------+-----------+--+
++------+-----------+
 | 22   | 1001 abc  |
 | 22   | 1002 pqr  |
 | 22   | 1003 tuv  |
 | 33   | 1004 def  |
 | 33   | 1005 xyz  |
-+------+-----------+--+
++------+-----------+
+```
 
-select key, split(trim(uniqueVal), ' ')[0], split(trim(uniqueVal), ' ')[1]
-from(
-	select key, split(items, ',') as valArray
-	from test 
-	) a lateral view explode(a.valArray) exploded as uniqueVal ;
+Comment obtenir le résultat suivant ? <br/>
 
-+------+-------+------+--+
+```
+hive > ...
+```
+```
++------+-------+------+
 | key  |  _c1  | _c2  |
-+------+-------+------+--+
++------+-------+------+
 | 22   | 1001  | abc  |
 | 22   | 1002  | pqr  |
 | 22   | 1003  | tuv  |
 | 33   | 1004  | def  |
 | 33   | 1005  | xyz  |
-+------+-------+------+--+
-
++------+-------+------+
 ```
-ENSUITE, 
-INSERER LE RESULTAT DE CETTE DERNIERE OPERATION DANS LA OU LES COLONNES CREES EN VUE DU SPLIT
+
+ENSUITE, INSERER LE RESULTAT DE CETTE DERNIERE OPERATION DANS LA OU LES COLONNES CREES EN VUE DU SPLIT.
