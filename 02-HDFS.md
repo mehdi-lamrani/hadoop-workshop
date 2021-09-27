@@ -8,7 +8,8 @@ Prendre en main et apprendre à manipuler des fichiers dans l’environnement HD
 ---
 - #### Enoncé 1 : MANIPULATION Part I
 
-:information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
+:information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES :
+https://www.formation-bigdata.com/les-commandes-hdfs/
 
 1 - Télécharger le fichier suivant dans le Système linux via la commande WGET :<br/>
 https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
