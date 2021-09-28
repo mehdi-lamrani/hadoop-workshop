@@ -67,7 +67,7 @@ la Database "default" devrais s'afficher avec succès.
 
 ###  LOAD ZEPPELIN NOTEBOOK : 
 
-- Télécharger le notebook qui se trouve dans /NOTEBOOKS/Zeppelin (dans le présent repo)
+- Télécharger le notebook qui vous sera remis.
 - Dans Zeppelin : 
      - Import Notebook > JSON > Chemin du fichier téléchargé
      - Le Nouveau Notebook apparait dans Zeppelin, cliquez dessus
