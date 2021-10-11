@@ -6,7 +6,7 @@ Une clé SSH .pem vous sera transmise sur le chat.
 :warning: Si vous êtes sur Windows :
 
 - Installation de Mobaxterm :  
-https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
+https://download.mobatek.net/2142021091974654/MobaXterm_Portable_v21.4.zip
 
 - La clé SSH vous est fournie par le formateur au format .ppk sur teams. 
 téléchargez  la en local sur votre machine et notez bien l'endroit ou elle a été sauvegardeé
