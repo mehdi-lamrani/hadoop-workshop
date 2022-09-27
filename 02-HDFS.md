@@ -12,58 +12,63 @@ Prendre en main et apprendre à manipuler des fichiers dans l’environnement HD
 https://www.formation-bigdata.com/les-commandes-hdfs/
 
 1 - Télécharger le fichier suivant dans le Système linux via la commande WGET :<br/>
-https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
+https://www.gutenberg.org/files/40086/40086-0.txt
 ```console
-# Commande wget
+wget https://www.gutenberg.org/files/40086/40086-0.txt
+```
+2 - Renomer le fichier 40086-0.txt en moliere.txt
+```console
+touch molière.txt
+mv 40086-0.txt molière.txt
 ```
 
-2 - Créer un répertoire sous HDFS.
+3 - Créer un répertoire sous HDFS.
 
 ```console
-# Dans le dossier /user/mon_prenom
+hdfs dfs -mkdir /user/nom_prénom
 ```
 
-3 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user.
+4 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user.
 
 ```console
-# Toujours dans le dossier /user/mon_prenom
+hdfs dfs -put /home/hadoop/molière.txt /user/nom_prénom
 ```
 
-4 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs).
+5 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs).
 
 ```console
-# Voir la doc des commandes HDFS
+hdfs dfs -ls /user/nom_prénom
 ```
 
 ---
 - #### Enoncé 2 : MANIPULATION Part II
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
+```console
+hdfs dfs -mkdir /user/nom_prénom/data
+```
 
-2 - Déplacer le fichier airports.dat depuis hdfs dans ce répertoire data.
+2 - Déplacer le fichier 40086-0.txt depuis hdfs dans ce répertoire data.
+```console
+ hdfs fs -mv /user/nom_prénom/molière.txt /user/nom_prénom/data
+```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
+```console
+hdfs dfs -chmod 600 /user/nom_prénom/data
+ ```
 
-:information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod / etc.
-
+:information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod / etc.)
 
 ---
 - #### Enconcé 3 : EXPLORATION DES METADATA
-
 Explorer le mapping réel des fichiers HDFS dans EXT4.
 Localiser les données relatives au fichier chargé dans HDFS lors de la première partie.
-
 * Blocs du fichier
 * Mapping du fichier et des blocs
 * Mapping des blocs vers les serveurs
 
 Infos des blocs de fichiers :
-  
 ```console  
-$ hdfs fsck /user/mon_prenom/data/airports.dat -files -blocks -locations  
+hdfs fsck /user/nom_prénom/data/molière.txt -files -blocks -locations 
 ```  
---- 
-
-:information_source: Ressource Utile :   
-<!--https://hortonworks.com/blog/hdfs-metadata-directories-explained/--!>
-https://www.waitingforcode.com/hdfs/hdfs-on-disk-explained/read
