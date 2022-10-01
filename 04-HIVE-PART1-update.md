@@ -64,7 +64,7 @@ use mon_prenom_db;
 - Construire la requête de création et de remplissage d'un tableau dans la base de donnée à partir su fichier .csv sauvegardé :
     - Définir la table associée au fichier csv dans Hive (Create Table) en respectant le schéma noté précédemment, par ewemple: 
          ```
-        create table douaa_table(
+        create table driver_table(
             driverId int,
             name varchar(20),
             ssn int,
@@ -77,7 +77,7 @@ use mon_prenom_db;
         row format 
         delimited fields terminated by ',' 
         stored as textfile   
-        location '/hive/data/douaa_rep'
+        location '/hive/data/votre_prenom_rep'
         ```
     - supprimer l'entête :
         ```
@@ -96,7 +96,7 @@ wage_plan varchar(20)
 row format 
 delimited fields terminated by ',' 
 stored as textfile   
-location '/hive/data/douaa_rep'
+location '/hive/data/votre_prenom_rep'
 TBLPROPERTIES('skip.header.line.count'='1');
 ```
 ou bien :
@@ -106,7 +106,7 @@ CREATE TABLE driver_table (driverId STRING,name STRING,ssn STRING,location STRIN
 SQL n'est pas sensible à la case
 - Insérer les données du fichier de votre chemin local dans votre table , par exemple:
     ```
-    LOAD DATA LOCAL INPATH '/home/hadoop/driver_data/drivers.csv' OVERWRITE INTO TABLE douaa_table;
+    LOAD DATA LOCAL INPATH '/home/hadoop/driver_data/drivers.csv' OVERWRITE INTO TABLE driver_table;
     ```
 - lister les données insérées: 
 ```
@@ -121,6 +121,6 @@ where certified='Y';
 ```
 select count(*) from driver_table where certified='N';
 ```
-- A votre tour :
+- A votre tour [(resources)](https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html)
 - charger le contenu de deux autres fichiers dans deux autres tableaux dans la même base
 - ecrire des requêtes select pour filtrer et/ou ordonner.
