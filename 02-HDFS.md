@@ -48,7 +48,7 @@ hdfs dfs -ls /user/nom_prénom
 hdfs dfs -mkdir /user/nom_prénom/data
 ```
 
-2 - Déplacer le fichier 40086-0.txt depuis hdfs dans ce répertoire data.
+2 - Déplacer le fichier moliere.txt depuis hdfs dans ce répertoire data.
 ```console
  hdfs fs -mv /user/nom_prénom/molière.txt /user/nom_prénom/data
 ```
