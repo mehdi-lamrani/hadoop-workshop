@@ -55,7 +55,7 @@ hdfs dfs -mkdir /user/nom_prénom/data
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
 ```console
-hdfs dfs -chmod 600 /user/nom_prénom/data
+hdfs dfs -chmod 700 /user/nom_prénom/data
  ```
 
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod / etc.)
