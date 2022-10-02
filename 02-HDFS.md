@@ -50,7 +50,7 @@ hdfs dfs -mkdir /user/nom_prénom/data
 
 2 - Déplacer le fichier moliere.txt depuis hdfs dans ce répertoire data.
 ```console
- hdfs fs -mv /user/nom_prénom/molière.txt /user/nom_prénom/data
+ hdfs dfs -mv /user/nom_prénom/molière.txt /user/nom_prénom/data
 ```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
