@@ -20,7 +20,7 @@ cd driver_data
 ```
 ls
 ```
-- Ouvrir le fichier : head votrefichier.csv
+- Ouvrir le fichier : head drivers.csv
 ```
 head votrefichier.csv
 ```
