@@ -31,13 +31,13 @@ hdfs dfs -mkdir /user/nom_prénom
 4 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user.
 
 ```console
-hdfs dfs -put /home/hadoop/molière.txt /user/nom_prénom
+hdfs dfs -put /home/hadoop/moliere.txt /user/nom_prenom
 ```
 
 5 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs).
 
 ```console
-hdfs dfs -ls /user/nom_prénom
+hdfs dfs -ls /user/nom_prenom
 ```
 
 ---
@@ -50,12 +50,12 @@ hdfs dfs -mkdir /user/nom_prénom/data
 
 2 - Déplacer le fichier moliere.txt depuis hdfs dans ce répertoire data.
 ```console
- hdfs dfs -mv /user/nom_prénom/molière.txt /user/nom_prénom/data
+ hdfs dfs -mv /user/nom_prénom/molière.txt /user/nom_prenom/data
 ```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
 ```console
-hdfs dfs -chmod 700 /user/nom_prénom/data
+hdfs dfs -chmod 700 /user/nom_prenom/data
  ```
 
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod / etc.)
