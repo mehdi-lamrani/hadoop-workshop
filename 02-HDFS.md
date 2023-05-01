@@ -19,7 +19,7 @@ wget https://www.gutenberg.org/files/40086/40086-0.txt
 2 - Renomer le fichier 40086-0.txt en moliere.txt
 ```console
 touch molière.txt
-mv 40086-0.txt molière.txt
+mv 40086-0.txt moliere.txt
 ```
 
 3 - Créer un répertoire sous HDFS.
