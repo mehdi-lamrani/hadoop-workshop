@@ -72,3 +72,58 @@ Infos des blocs de fichiers :
 ```console  
 hdfs fsck /user/nom_prenom/data/moliere.txt -files -blocks -locations 
 ```  
+
+```console  
+/user/astro/moliere.txt 1429 bytes, replicated: replication=1, 1 block(s):  OK
+0. BP-1624421665-172.30.3.247-1682942907253:blk_1073743207_2383 len=1429 Live_repl=1  [DatanodeInfoWithStorage[172.30.3.92:9866,DS-9bf57c96-4389-448c-8bce-a6ac54750aa2,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:	1
+ Number of racks:		1
+ Total dirs:			0
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	1429 B
+ Total files:	1
+ Total blocks (validated):	1 (avg. block size 1429 B)
+ Minimally replicated blocks:	1 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	1
+ Average block replication:	1.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Blocks queued for replication:	0
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+ Blocks queued for replication:	0
+FSCK ended at Mon May 01 12:50:04 UTC 2023 in 8 milliseconds
+```  
+
+```console  
+/user/astro/moliere.txt: This is the HDFS path of the file.
+1429 bytes: This is the size of the file, in bytes.
+replicated: replication=1: This indicates the replication factor of the file. In this case, the replication factor is set to 1, which means that there is only one copy of the file stored in the HDFS cluster.
+1 block(s): OK: This shows that the file is stored in a single HDFS block and that the block status is OK.
+0.: This is the index of the block information being shown (since there's only one block in this case).
+BP-1624421665-172.30.3.247-1682942907253: This is the Block Pool ID, a unique identifier for the block pool, which is a collection of blocks that belong to a single namespace (HDFS cluster).
+blk_1073743207_2383: This is the Block ID, which is a unique identifier for this specific block within the block pool.
+len=1429: This is the length of the block in bytes, which matches the file size (1429 bytes) as there is only one block.
+Live_repl=1: This indicates the number of live replicas of this block in the cluster. In this case, it is 1, which corresponds to the replication factor.
+DatanodeInfoWithStorage[172.30.3.92:9866,DS-9bf57c96-4389-448c-8bce-a6ac54750aa2,DISK]: This provides information about the DataNode where the block is stored. The IP address and port of the DataNode are 172.30.3.92:9866, the storage ID is DS-9bf57c96-4389-448c-8bce-a6ac54750aa2, and the storage type is DISK.
+```
