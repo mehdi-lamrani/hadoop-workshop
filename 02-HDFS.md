@@ -70,5 +70,5 @@ Localiser les données relatives au fichier chargé dans HDFS lors de la premiè
 
 Infos des blocs de fichiers :
 ```console  
-hdfs fsck /user/nom_prénom/data/moliere.txt -files -blocks -locations 
+hdfs fsck /user/nom_prenom/data/moliere.txt -files -blocks -locations 
 ```  
