@@ -114,6 +114,7 @@ Erasure Coded Block Groups:
  Blocks queued for replication:	0
 FSCK ended at Mon May 01 12:50:04 UTC 2023 in 8 milliseconds
 ```  
+
 -	/user/astro/moliere.txt: This is the HDFS path of the file.
 -	1429 bytes: This is the size of the file, in bytes.
 -	replicated: replication=1: This indicates the replication factor of the file. In this case, the replication factor is set to 1, which means that there is only one copy of the file stored in the HDFS cluster.
