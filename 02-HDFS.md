@@ -14,7 +14,7 @@ https://www.formation-bigdata.com/les-commandes-hdfs/
 1 - Télécharger le fichier suivant dans le Système linux via la commande WGET :<br/>
 https://www.gutenberg.org/files/40086/40086-0.txt
 ```console
-wget https://www.gutenberg.org/files/40086/40086-0.txt
+wget https://www.gutenberg.org/files/40086/40086-0.txt -o moliere.txt
 ```
 2 - Renomer le fichier 40086-0.txt en moliere.txt
 ```console
