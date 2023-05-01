@@ -45,12 +45,12 @@ hdfs dfs -ls /user/nom_prenom
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/mon_prenom”.
 ```console
-hdfs dfs -mkdir /user/nom_prénom/data
+hdfs dfs -mkdir /user/nom_prenom/data
 ```
 
 2 - Déplacer le fichier moliere.txt depuis hdfs dans ce répertoire data.
 ```console
- hdfs dfs -mv /user/nom_prénom/molière.txt /user/nom_prenom/data
+ hdfs dfs -mv /user/nom_prenom/moliere.txt /user/nom_prenom/data
 ```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
