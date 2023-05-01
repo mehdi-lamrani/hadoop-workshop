@@ -115,15 +115,15 @@ Erasure Coded Block Groups:
 FSCK ended at Mon May 01 12:50:04 UTC 2023 in 8 milliseconds
 ```  
 
--	/user/astro/moliere.txt: This is the HDFS path of the file.
--	1429 bytes: This is the size of the file, in bytes.
--	replicated: replication=1: This indicates the replication factor of the file. In this case, the replication factor is set to 1, which means that there is only one copy of the file stored in the HDFS cluster.
--	1 block(s): OK: This shows that the file is stored in a single HDFS block and that the block status is OK.
--	0.: This is the index of the block information being shown (since there's only one block in this case).
--	BP-1624421665-172.30.3.247-1682942907253: This is the Block Pool ID, a unique identifier for the block pool, which is a collection of blocks that belong to a single namespace (HDFS cluster).
--	blk_1073743207_2383: This is the Block ID, which is a unique identifier for this specific block within the block pool.
--	len=1429: This is the length of the block in bytes, which matches the file size (1429 bytes) as there is only one block.
--	Live_repl=1: This indicates the number of live replicas of this block in the cluster. In this case, it is 1, which corresponds to the replication factor.
--	DatanodeInfoWithStorage[172.30.3.92:9866,DS-9bf57c96-4389-448c-8bce-a6ac54750aa2,DISK]: This provides information about the DataNode where the block is stored. The IP address and port of the DataNode are 172.30.3.92:9866, the storage ID is DS-9bf57c96-4389-448c-8bce-a6ac54750aa2, and the storage type is DISK.
+-	`/user/astro/moliere.txt`: This is the HDFS path of the file.
+-	`1429 bytes`: This is the size of the file, in bytes.
+-	`replicated`: replication=1: This indicates the replication factor of the file. In this case, the replication factor is set to 1, which means that there is only one copy of the file stored in the HDFS cluster.
+-	`1 block(s)`: OK: This shows that the file is stored in a single HDFS block and that the block status is OK.
+-	`0.`: This is the index of the block information being shown (since there's only one block in this case).
+-	`BP-1624421665-172.30.3.247-1682942907253`: This is the Block Pool ID, a unique identifier for the block pool, which is a collection of blocks that belong to a single namespace (HDFS cluster).
+-	`blk_1073743207_2383`: This is the Block ID, which is a unique identifier for this specific block within the block pool.
+-	`len=1429`: This is the length of the block in bytes, which matches the file size (1429 bytes) as there is only one block.
+-	`Live_repl=1`: This indicates the number of live replicas of this block in the cluster. In this case, it is 1, which corresponds to the replication factor.
+-	`DatanodeInfoWithStorage[172.30.3.92:9866,DS-9bf57c96-4389-448c-8bce-a6ac54750aa2,DISK]`: This provides information about the DataNode where the block is stored. The IP address and port of the DataNode are 172.30.3.92:9866, the storage ID is DS-9bf57c96-4389-448c-8bce-a6ac54750aa2, and the storage type is DISK.
 
 
